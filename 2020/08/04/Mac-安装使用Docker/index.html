@@ -225,16 +225,16 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>MAC 安装docker发现很多网上的文章都是安装桌面版,但是以前linux安装的时候都是<br>以Unbuntu和centos系统为主去安装,基本上官网的手册就够了<br><a href="https://docs.docker.com/engine/install/ubuntu/">官网手册安装过程</a></p>
-<p>按照官网来看,Mac也是推荐安装桌面版<br><a href="https://docs.docker.com/docker-for-mac/install/">官网手册MAC安装</a></p>
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><strong>MAC 安装docker发现很多网上的文章都是安装桌面版,但是以前linux安装的时候都是<br>以Unbuntu和centos系统为主去安装,基本上官网的手册就够了</strong><br><a href="https://docs.docker.com/engine/install/ubuntu/">官网手册安装过程</a></p>
+<p><strong>按照官网来看,Mac也是推荐安装桌面版</strong><br><a href="https://docs.docker.com/docker-for-mac/install/">官网手册MAC安装</a></p>
 <p><img src="http://g0fl1erimage.test.upcdn.net//2020/08/03/2.png" alt="2"></p>
-<p>然后就算是大功告成了<br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964802844817.jpg"></p>
-<p>命令行也有了<br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964803169206.jpg"></p>
-<p>这里docker-compose我不知道是不是之前用brew install的时候安装的还是自带的<br>反正有了就用着吧<br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964803652869.jpg"></p>
-<h2 id="更换源："><a href="#更换源：" class="headerlink" title="更换源："></a>更换源：</h2><p>这里看网上很多都是从Daemon处哪里就换了,但是我发现我安装的这个版本没有了<br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964804969231.jpg"><br>变成了这样:<br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964805138451.jpg"><br>不过也问题不大,基本上跟linux修改文件换源差不多,看一下发现这个是守护程序,然后他也给了文档看一下即可,这里基本上都有了。<br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964807161716.jpg"><br><a href="https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file">守护程序配置</a><br>这里换源:<br>增加registry-mirrors的配置即可</p>
+<p><strong>然后就算是大功告成了</strong><br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964802844817.jpg"></p>
+<p><strong>命令行也有了</strong><br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964803169206.jpg"></p>
+<p><strong>这里docker-compose我不知道是不是之前用brew install的时候安装的还是自带的<br>反正有了就用着吧</strong><br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964803652869.jpg"></p>
+<h2 id="更换源："><a href="#更换源：" class="headerlink" title="更换源："></a>更换源：</h2><p><strong>这里看网上很多都是从Daemon处哪里就换了,但是我发现我安装的这个版本没有了</strong><br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964804969231.jpg"><br><strong>变成了这样:</strong><br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964805138451.jpg"><br>不过也问题不大,基本上跟linux修改文件换源差不多,看一下发现这个是守护程序,然后他也给了文档看一下即可,这里基本上都有了。<br><img src="http://g0fl1erimage.test.upcdn.net/2020/08/03/15964807161716.jpg"><br><a href="https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file">守护程序配置</a><br><strong>这里换源:</strong><br><strong>增加registry-mirrors的配置即可</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [</span><br><span class="line">    &quot;https:&#x2F;&#x2F;hub-mirror.c.163.com&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;experimental&quot;: false,</span><br><span class="line">  &quot;debug&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>自己总结一些自己常用的：</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><strong>自己总结一些自己常用的：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">docker search imagename #查询镜像</span><br><span class="line"></span><br><span class="line">docker pull imagename #下载镜像</span><br><span class="line"></span><br><span class="line">docker run -it images command #运行镜像,command一般写成&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">docker build -f mydockerfile -t mycentos:0.1 . #-f 参数如果跟</span><br><span class="line"></span><br><span class="line">dockerfile在同一目录一般我不加,直接docker build -t imagename . 就完事了。</span><br><span class="line"></span><br><span class="line">docker save -o images.tar images #打包镜像</span><br><span class="line"></span><br><span class="line">docker load &lt;images.tar #加载镜像</span><br><span class="line"></span><br><span class="line">docker load -I images.tar #加载镜像(这种没怎么用过)</span><br></pre></td></tr></table></figure>
 
 
@@ -375,19 +375,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/10/29/2018%E7%AC%AC7%E5%B1%8A%E8%93%9D%E7%9B%BE%E6%9D%AF%E9%83%A8%E5%88%86wp/">2018第7届蓝盾杯部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/08/CVE-2018-4407%E5%A4%8D%E7%8E%B0/">CVE-2018-4407复现(ios缓冲区溢出漏洞)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/06/16/MSSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MSSQL学习笔记</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/10/31/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%BA%8C%E5%A4%A9/">C语言学习第二天</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/10/10/bdctf/">我校蓝盾练习平台的部分练习题wp</a>
+                    <a href="/2018/10/15/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/">c语言学习第一天</a>
                 </span>
             </li>
             
@@ -405,13 +411,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/11/13/%E4%B8%80%E9%81%93picoctf%E7%9A%84RSA%E9%A2%98%E7%9B%AE/">一道picoctf的RSA题目</a>
+                    <a href="/2018/10/13/%E6%8A%A4%E7%BD%91%E6%9D%AF/">护网杯签到题wp</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/10/13/%E6%8A%A4%E7%BD%91%E6%9D%AF/">护网杯签到题wp</a>
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
                 </span>
             </li>
             
@@ -424,12 +430,6 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/10/19/%E5%AE%9E%E9%AA%8C%E5%90%A7/">实验吧做题笔记</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2020/08/04/Mac-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Docker/">Mac 安装使用Docker</a>
                 </span>
             </li>
             
@@ -454,11 +454,11 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/ctf/" style="font-size: 16.29339668123102px;" class="tag-cloud-link">ctf</a>
+    <a href="/tags/ctf/" style="font-size: 19.45690967610868px;" class="tag-cloud-link">ctf</a>
     
-    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 16.70966661980677px;" class="tag-cloud-link">漏洞复现</a>
+    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 14.666078996575488px;" class="tag-cloud-link">漏洞复现</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 15.859920523451839px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 14.585677091752903px;" class="tag-cloud-link">学习笔记</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
