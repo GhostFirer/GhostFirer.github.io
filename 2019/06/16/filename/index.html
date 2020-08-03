@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="G0fl1er">
+    
+    <meta name="description" content="一只想学技术的专科菜鸡">
+    
+    
+    
+    
+    
+    
+    <title>14道杂项中的隐写题目 | G0fl1er&#39;blog</title>
+    <link href=”https://ghostfirer.github.io“ rel=”prefetch” />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/timg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://ghostfirer.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">G0fl1er&#39;blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/ctf/">ctf</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about/index">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://ghostfirer.github.io">G0fl1er&#39;blog</a>
+        >
+        <span>14道杂项中的隐写题目</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/06/16/filename/">14道杂项中的隐写题目</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-06-16
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/06/16/filename/">14道杂项中的隐写题目</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-06-16
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>首先，这个写完以后，截图没有保存为文件，所以有的图片都是后来在原图上面截取的，所以有的不是很清楚。</p>
+<p><a href="https://pan.baidu.com/s/1xCYIy935317oTSCacUYFcw">题目下载</a> 密码: dt92</p>
+<hr>
+<h3 id="1-相机-jpg"><a href="#1-相机-jpg" class="headerlink" title="1.相机.jpg"></a>1.相机.jpg</h3><p><strong>由文件名字可以知道，这道题是考察了识别照片的属性，说白了就是看看这个是用什么相机拍的</strong></p>
+<p>果真，在打开文件属性找到照相机型号处发现flag。</p>
+<p><img src="1.png" alt="enter description here"></p>
+<p><strong>flag: Flag{iPhone}</strong> </p>
+<hr>
+<h3 id="2-logo-png"><a href="#2-logo-png" class="headerlink" title="2.logo.png"></a>2.logo.png</h3><p>打开图片发现是png图片，发现这个根据题目也没什么信息可以得到，果断丢进16进制编辑器看一下<br>然后发现在png文件尾部发现flag</p>
+<p><img src="2.png" alt="enter description here"></p>
+<p><strong>flag: Flag{szywangan}</strong> </p>
+<hr>
+<h3 id="3-神器-png"><a href="#3-神器-png" class="headerlink" title="3.神器.png"></a>3.神器.png</h3><p>一说神器，肯定是就是再说Stegsolve这个工具，所以用这个工具打开看看</p>
+<p>翻到blue 0通道的位置发现了一张二维码</p>
+<p><img src="3.png" alt="enter description here"><br>用QR扫描一下发现flag</p>
+<p><strong>flag: Flag{douniwan}</strong> </p>
+<hr>
+<h3 id="4-男神"><a href="#4-男神" class="headerlink" title="4.男神"></a>4.男神</h3><p>打开发现是两张图片</p>
+<p><img src="5.png" alt="enter description here"></p>
+<p>都是png的后缀<br>继续丢进那个stegsolve里面进行对比一下，发现了两张二维码</p>
+<p><strong>一张残缺的，一张清晰的。</strong><br>。。。。然后继续丢进工具中来查看<br><strong>发现第一张有个二维码但是被反色了</strong></p>
+<p><img src="6.png" alt="enter description here"><br><strong>调高QR的纠错等级，进行扫描，成功出结果</strong></p>
+<p><img src="7.png" alt="enter description here"><br>然后看第二张的结果</p>
+<p><img src="8.png" alt="enter description here"><br>在Red 0通道、Green 0通道发现两张二维码</p>
+<p><img src="9.png" alt="enter description here"><br>结果：DES</p>
+<p><img src="10.png" alt="enter description here"><br>结果：6XaMMbM7<br><strong>DES解密</strong></p>
+<p><a href="http://tool.oschina.net/encrypt">在线解密</a></p>
+<p>密钥和密文都给了，加密方式也给了。<br>直接出flag</p>
+<p><img src="11.png" alt="enter description here"></p>
+<p><strong>flag: ctf{67a166801342415a6da8f0dbac591974}</strong></p>
+<hr>
+<h3 id="5-cnhongke-gif"><a href="#5-cnhongke-gif" class="headerlink" title="5.cnhongke.gif"></a>5.cnhongke.gif</h3><p>看标题，不知道这道题要考察什么，只能做做看看了</p>
+<p>发现文件是坏的，进行修复<br>16进制打开发现头文件格式少了，进行填充</p>
+<p><img src="12.png" alt="enter description here"></p>
+<p>GIF头文件：47 49 46 38 39 61</p>
+<p>然后再看<br>发现flag，进行gif分析，获取flag<br><a href="http://www.uupoop.com/GIF_fenjie/">在线分解GIF</a></p>
+<p>然后拿到flag</p>
+<p><strong>flag: Flag{fxiZHXoPJ}</strong></p>
+<hr>
+<h3 id="6-眼见非实-zip"><a href="#6-眼见非实-zip" class="headerlink" title="6.眼见非实.zip"></a>6.眼见非实.zip</h3><p>这个题就很常见，ISCC2017中出现过一次，蓝盾BDCTF2017年那届也出现过一次，很有意思的一道题</p>
+<p>打开是个压缩包，解压后是个文档发现开头出现PK的字样，很显然zip的文件头，果断改后缀</p>
+<p>再解压</p>
+<p><img src="13.png" alt="enter description here"></p>
+<p>发现了很多文件，然后一个一个找flag就找到了</p>
+<p>最后在document.xml文件中发现了flag</p>
+<p><img src="14.png" alt="enter description here"></p>
+<p><strong>flag：flag{F1@g}</strong> </p>
+<hr>
+<h3 id="7-apple-png"><a href="#7-apple-png" class="headerlink" title="7.apple.png"></a>7.apple.png</h3><p>这道题也是，看题目不知道该干什么<br>是个png的文件</p>
+<p>16进制看了下，发现文件尾藏了什么东西</p>
+<p>果断binwalk命令 or foremost命令分离一波（有经验的可以手动扣）</p>
+<p>发现有个RAR</p>
+<p><img src="15.png" alt="enter description here"></p>
+<p>是个音乐，发现可以播放，是小苹果（你是我的小呀小苹果~），是个MP3的音乐格式，发现有杂音。</p>
+<p>想起来了个工具mp3隐写分离工具（MP3Stego），但是没有给密码什么的，就拿apple当作密码试一下吧</p>
+<p><strong>发现解不开，然后回头看看哪里于没有忽略的地方。<br>打开原图发现二维码</strong></p>
+<p><img src="16.png" alt="enter description here"><br>QR扫描一下发现是Unicode编码</p>
+<p><img src="17.png" alt="enter description here"></p>
+<p><a href="http://tool.chinaz.com/tools/unicode.aspx">在线解Unicode</a></p>
+<p><img src="18.png" alt="enter description here"></p>
+<p>发现是当铺密码，然后继续当铺密码解密</p>
+<p><a href="http://www.zjslove.com/3.decode/dangpu/index.html">当铺密码在线解密</a></p>
+<p><img src="19.png" alt="enter description here"></p>
+<p>OK继续回到上面的步骤，进行MP3Stego解密</p>
+<p><img src="20.png" alt="enter description here"></p>
+<p>成功，打开即可看到一个base64编码过的明文</p>
+<p><img src="21.png" alt="enter description here"></p>
+<p>脚本解密即可</p>
+<p><img src="22.png" alt="enter description here"></p>
+<p><strong>flag: CTF{xiao_ping_guo}</strong> </p>
+<hr>
+<h3 id="8-gakki-png"><a href="#8-gakki-png" class="headerlink" title="8.gakki.png"></a>8.gakki.png</h3><p>看标题也看不出什么，png文件的后缀，打开属性看到</p>
+<p><img src="23.png" alt="enter description here"><br>然后进16进制将他们两个修改成一样（具体怎么修改，去百度png文件格式详解）</p>
+<p><img src="24.png" alt="enter description here"></p>
+<p>保存一下就可看到flag</p>
+<p><img src="25.png" alt="enter description here"></p>
+<p><strong>flag: flag{H1gh_4nD_Wid7h}</strong> </p>
+<hr>
+<h3 id="9-telnet-pcap"><a href="#9-telnet-pcap" class="headerlink" title="9.telnet.pcap"></a>9.telnet.pcap</h3><p>打开看到，是个通讯的数据包，用wireshark打开看一下<br>然后追踪一下TCP流看了一下，发现flag</p>
+<p><img src="26.png" alt="enter description here"></p>
+<p><strong>flag: flag{d316759c281bf925d600be698a4973d5}</strong></p>
+<hr>
+<h3 id="10-web"><a href="#10-web" class="headerlink" title="10.web"></a>10.web</h3><p>打开后，只是看到了个无后缀的文件。用16进制打开看一下也没发现什么。<br>卡住了。。。。<br>既然是Web，继续用wireshark打开看看，结果真的出现了个数据包</p>
+<p>在导出http对象的位置，发现了些压缩包和数据</p>
+<p><img src="27.png" alt="enter description here"></p>
+<p>然后导出所有的压缩包和文件后发现只有一个压缩包是没有损坏的，但是加密了</p>
+<p>最后发现在刚刚一并导出的文件里面出现了password</p>
+<p>password=shadowpassword</p>
+<p>解密直接出flag</p>
+<p><img src="28.png" alt="enter description here"></p>
+<p><strong>flag: KEY{ae73e96ab858095eaf1228b1499f8c33}</strong></p>
+<hr>
+<h3 id="11-1478282740-581ccdf44bf5f-zip"><a href="#11-1478282740-581ccdf44bf5f-zip" class="headerlink" title="11.1478282740_581ccdf44bf5f.zip"></a>11.1478282740_581ccdf44bf5f.zip</h3><p>打开发现是个加密的压缩包，需要密码。<strong>但是后面有句话提示</strong>：这小伙很没安全意思，总喜欢把自己的银行卡密码设置为文档密码<br>银行卡6位数字，生成一个字典，进行爆破一下。</p>
+<p><img src="29.png" alt="enter description here"></p>
+<p>然后解压出来发现是一首诗</p>
+<p><img src="30.png" alt="enter description here"><br>只缘身在此山中，就是在这个文件中吧，然后拖到16进制编辑器里面看一下。</p>
+<p><img src="31.png" alt="enter description here"><br>PK的文件头，zip的文件，继续改后缀，解压看一下，发现又是和眼见非实那道题一样。<br>打开doucument.xml查找flag，果然在这里</p>
+<p><img src="32.png" alt="enter description here"><br><strong>flag: Flag{oRuesP57WAaGhBJk}</strong></p>
+<hr>
+<h3 id="12-伪加密"><a href="#12-伪加密" class="headerlink" title="12.伪加密"></a>12.伪加密</h3><p>360真香(360压缩包)<br>解压直接出flag</p>
+<p>正解：用16进制编辑器打开，即可看到flag</p>
+<p><img src="33.png" alt="enter description here"></p>
+<p>继续，从00 00可以看出，他是未加密的，但是压缩包打开后需要密码，这说明他进行了一个伪加密</p>
+<p><img src="34.png" alt="enter description here"></p>
+<p>只需把09这个位置改成00，就修复了</p>
+<p><img src="35.png" alt="enter description here"></p>
+<p>然后保存一下看看<br>直接出flag</p>
+<p><strong>flag: flag{557VEvb2cllWyg1V}</strong></p>
+<hr>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            G0fl1er
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>一只想学技术的专科菜鸡</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176926/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176908/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964745856182/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/MSSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/filename/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/docs/15964746176721/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/docs/15964746176699/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/mysql%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%85%A5/">mysql手动注入</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/15/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/">c语言学习第一天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/19/%E5%AE%9E%E9%AA%8C%E5%90%A7/">实验吧做题笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964745856182/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/15/docs/15964746176871/">c语言学习第一天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/docs/15964746176946/">mysql手动注入</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/docs/15964746176699/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/19/docs/15964746176759/">实验吧做题笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/17/docs/15964746176806/">我校平台CTF解题部分wp</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2019/06/16/filename/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2019/06/16/filename/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2019/06/16/filename/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/ctf/" style="font-size: 12.178031921667362px;" class="tag-cloud-link">ctf</a>
+    
+    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 8.97208183581421px;" class="tag-cloud-link">漏洞复现</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10.003999810851688px;" class="tag-cloud-link">学习笔记</a>
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="youlian/index.html" target="_blank">大佬友链</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="" target="_blank">Github</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 G0fl1er Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

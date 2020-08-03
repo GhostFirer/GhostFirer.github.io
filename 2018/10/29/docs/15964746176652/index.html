@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="G0fl1er">
+    
+    <meta name="description" content="一只想学技术的专科菜鸡">
+    
+    
+    
+    
+    
+    
+    <title>2018第7届蓝盾杯部分wp | G0fl1er&#39;blog</title>
+    <link href=”https://ghostfirer.github.io“ rel=”prefetch” />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/timg.jpg');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://ghostfirer.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">G0fl1er&#39;blog</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/ctf/">ctf</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">漏洞复现</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about/index">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://ghostfirer.github.io">G0fl1er&#39;blog</a>
+        >
+        <span>2018第7届蓝盾杯部分wp</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/10/29/docs/15964746176652/">2018第7届蓝盾杯部分wp</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-10-29
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/10/29/docs/15964746176652/">2018第7届蓝盾杯部分wp</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-10-29
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/ctf/">ctf</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>赛前准备：自从高三那年，西安线下的网信杯被打爆以后，知道了收集工具和wp的重要性。希望大家以后也多刷题多写wp。当时受到了iosmosic师傅的指点，自己用Hexo搭建个博客以后打比赛，用自己电脑可以本地搭建。这次比赛受益匪浅</p>
+<p>我就不标题号了，顺序因为我忘了。至于当时做题遇到的坑我就不提了，直接绕过。</p>
+<h3 id="BrainFuck"><a href="#BrainFuck" class="headerlink" title="BrainFuck"></a>BrainFuck</h3><p>这道题，打开是个图片，一只单身狗。。。跟我一样的情况/dk。（实验吧隐写原题）<br><a href="http://www.shiyanbar.com/ctf/1821">题目链接</a><br>刚刚拿到这个题目的时候，感觉很开心。捡便宜了，赛前两周的刷题没白费。</p>
+<p>这个题目首先得有一个工具，叫bftools。CSDN上下载得花点rmb，我就免费送了吧</p>
+<p><a href="%E9%93%BE%E6%8E%A5%EF%BC%9Ahttps://pan.baidu.com/s/1PE1EhuMManZvBvuWiCAfeQ">bftools</a> 提取码：ain5</p>
+<p>然后 得把图片放到他的目录下，然后cmd进入的目录输入命令：bftools.exe decode braincopter doge.png -o 2.png<br>继续输入命令：bftolls.exe run 2.png</p>
+<p>就会出现一段base64。解密就是我们的flag了。</p>
+<p><img src="1.png" alt="enter description here"></p>
+<p>然后python解密代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">print(base64.b64decode(<span class="string">&quot;Q1RGe0JyYWluZnVja18xc19TaW1wMWV9&quot;</span>))</span><br></pre></td></tr></table></figure>
+<p>最后flag：CTF{Brainfuck_1s_Simp1e}</p>
+<hr>
+<h3 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h3><p>这个题目打开以后，看到了一串字符。看到里面最大的是字母F。所以可以断定这个是16进制的字符。然后看到ASCII码，就知道了这个需要把16进制转换成ASCII码<br>（说实话这道题有点像ISCC2017的Misc里面的一道字符编码题目）<br>ASCII码我们知道，可见字符只有95个,也就是32-126。ascii码总共有128个，完整的是有255个。<br>所以我们先转换一下看看。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;ab979adf8e8a969c94df9d8d908891df999087df958a928fdf90899a8ddf8b979adf939e8586df9b9098dedfab979adf99939e98df968cc5df9d9b9c8b9984a6cf8aa09e8d9aa08c929e8dc882&quot;</span></span><br><span class="line">b = a.decode(<span class="string">&#x27;hex&#x27;</span>)</span><br><span class="line"><span class="keyword">print</span> b</span><br></pre></td></tr></table></figure>
+<p>我们发现打印出来是一堆看不懂的字符。</p>
+<p>���ߎ����ߝ����ߙ��ߕ���ߐ���ߋ��ߓ���ߛ���߫��ߙ���ߖ��ߝ������ϊ���������Ȃ</p>
+<p>其实到这里一般人当作乱码就给处理了。但是这里不是乱码。上面也说了ascii码了。所以看一下他对应的10进制数字是多少。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#encoding=utf-8</span></span><br><span class="line">a = <span class="string">&quot;ab979adf8e8a969c94df9d8d908891df999087df958a928fdf90899a8ddf8b979adf939e8586df9b9098dedfab979adf99939e98df968cc5df9d9b9c8b9984a6cf8aa09e8d9aa08c929e8dc882&quot;</span></span><br><span class="line">b = a.decode(<span class="string">&quot;hex&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">    print(ord(i))</span><br></pre></td></tr></table></figure>
+<p>171,151,154,223,……153,132166,207,138,160,158,141,154,160,140,146,158,141,200,130</p>
+<p>发现普遍都是大于126，所以不可见了。根据ASCII码的基本理解，所以我们将他们与255相减然后再转换。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#encoding=utf-8</span></span><br><span class="line">a = <span class="string">&quot;ab979adf8e8a969c94df9d8d908891df999087df958a928fdf90899a8ddf8b979adf939e8586df9b9098dedfab979adf99939e98df968cc5df9d9b9c8b9984a6cf8aa09e8d9aa08c929e8dc882&quot;</span></span><br><span class="line">b = a.decode(<span class="string">&quot;hex&quot;</span>)</span><br><span class="line">flag=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">    flag +=chr(<span class="number">255</span>-ord(i))</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+
+<p><img src="2.png" alt="enter description here"></p>
+<p>最后的flag：BDCTF{Y0u_are_smar7}</p>
+<hr>
+<h3 id="Excel"><a href="#Excel" class="headerlink" title="Excel"></a>Excel</h3><p>这个题目没什么好说的，直接用notepad++打开然后搜索CTF关键词就行了.(实验吧原题)</p>
+<p>最后flag: CTF{office_easy_cracked}</p>
+<hr>
+<h3 id="flag就在图片里面"><a href="#flag就在图片里面" class="headerlink" title="flag就在图片里面"></a>flag就在图片里面</h3><p>这道题也是实验吧的原题。想要做这道题得准备一个生日字典。还好我之前做的时候没有删除掉，所以刚刚好用上</p>
+<p>工具：Ziperello<br>字典：生日1980-2010年密码字典（我从百度上下载的）<br>使用这个工具直接用上我们的字典就可以爆破开</p>
+<p><img src="3.png" alt="enter description here"></p>
+<p>然后我们可以得到压缩包的密码为：19950522</p>
+<p>解压就可以看到一个图片，我们看他属性就可以了。</p>
+<p><img src="4.png" alt="enter description here"></p>
+<hr>
+<h3 id="好美的玫瑰花"><a href="#好美的玫瑰花" class="headerlink" title="好美的玫瑰花"></a>好美的玫瑰花</h3><p>实验吧原题：<a href="http://www.shiyanbar.com/ctf/1814">链接</a></p>
+<p>属实来说，这道题刚刚看到想了很久。就是想不起来哪里做到过。然后既然前面那么多实验吧原题，就去看了看自己提前下载好的各个比赛wp的pdf。找到了这个题目</p>
+<p>wp谁也会看，这里就不说了。按照那个wp一步一步来就可以了</p>
+<p>最后KEY：D77F5E4385291BCB<br>然后套上比赛格式BDCTF{}就行了</p>
+<hr>
+<h3 id="画一画、扫一扫"><a href="#画一画、扫一扫" class="headerlink" title="画一画、扫一扫"></a>画一画、扫一扫</h3><p>实验吧原题：<a href="http://www.shiyanbar.com/ctf/1860">链接</a></p>
+<p>这个题目打开以后发现了一堆坐标。这里我们可以使用这个gnuplot工具<br><a href="https://sourceforge.net/projects/gnuplot/files/latest/download">下载地址</a><br>但是我们的坐标还不会被工具识别，需要我们进行处理一下才可以。（得把括号去掉，逗号换成空格。）<br><img src="5.png" alt="enter description here"><br>然后将它保存在桌面上，并且命名为1.txt(这样简单的命名与存放可以省去处理错误的麻烦)</p>
+<p>然后我们开始绘图，命令：plot 你的坐标文件地址</p>
+<p><img src="6.png" alt="enter description here"></p>
+<p><img src="7.png" alt="enter description here"></p>
+<p>然后我们使用QR扫描一下就可以了</p>
+<p><img src="8.png" alt="enter description here"></p>
+<p>最后flag：CTF{simplectf_QR_code}</p>
+<hr>
+<h3 id="紧急报文"><a href="#紧急报文" class="headerlink" title="紧急报文"></a>紧急报文</h3><p>这个题目是实验吧原题：<a href="http://www.shiyanbar.com/ctf/1955">链接</a></p>
+<p>ADFGX密码表，直接对照一下就OK，但是在答案的地方，出现了个脑洞。我们需要把P倒过来。（搞得我以为是题目出问题了，还特别找了下裁判，只能说我自己太垃圾了）</p>
+<p><img src="9.png" alt="enter description here"></p>
+<p>然后我们对照出来的就是：puedoctf</p>
+<p>最后的flag：BDCTF{buedoctf}</p>
+<hr>
+<h3 id="眼花了吗"><a href="#眼花了吗" class="headerlink" title="眼花了吗"></a>眼花了吗</h3><p>这个题目实验吧原题：<a href="http://www.shiyanbar.com/ctf/44">链接</a></p>
+<p>这个题目还是参考了保存的wp。<br>上来肯定要先判断，这个图片到底藏没藏东西，然后使用binwalk工具来分离一下。</p>
+<p><img src="10.png" alt="enter description here"></p>
+<p>至于用stegsolve那几步的坑我就不说了。没什么用我觉得。直接说正解吧<br>用stegsolve打开那个分离出来的图片00003754.png。直接打开red plane那个通道下面的图片，然后保存。</p>
+<p>之后再用画图另存为bmp格式的图片，重点是要用单色道进行保存。</p>
+<p>然后我们用winhex打开就可以看到flag了。</p>
+<p><img src="12.png" alt="enter description here"></p>
+<p>最后flag：ISG{E4sY_StEg4n0gR4pHy}</p>
+<p>写不动了。。。。。后面再更吧</p>
+<hr>
+<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><p>这道题有点像实验吧的这道题：<br><a href="http://www.shiyanbar.com/ctf/1901">ROT-13变身了</a></p>
+<p>题：<br>现在我们有一个压缩文件,但我们不知道完整的解压密码。<br>幸好我们知道解压密码的一部分hash值，不过这个hash值被人改动过<br>你能帮我们找到的密码吗?<br>不完整的密码：”<em>ry</em>i<em>_c0</em>l”  （ <em>代表可打印字符）<br>不完整的hash值：”5adlc6</em>b602c8d<em>64l999b</em>d2lb95b<em>36a9l99</em>2”（*代表可打印字符）</p>
+<p>这里提示我们的是不可见的地方是我们的可打印字符，还是根据上面的ASCC码的概念，我们知道可见字符是在32-126之间。</p>
+<p>基本思路：爆破不完整的密码，然后用shal进行加密。然后将加密后的hash与这里不完整的hash比对。如果存在个位置以上的相同的那么基本上就可以确定了</p>
+<p>直接上代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#encoding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">jiami</span>(<span class="params">s</span>):</span></span><br><span class="line">    <span class="keyword">return</span> hashlib.sha1(s).hexdigest()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">32</span>,<span class="number">128</span>):</span><br><span class="line">    <span class="keyword">for</span> a1 <span class="keyword">in</span> range(<span class="number">32</span>, <span class="number">128</span>):</span><br><span class="line">        <span class="keyword">for</span> a2 <span class="keyword">in</span> range(<span class="number">32</span>, <span class="number">128</span>):</span><br><span class="line">            <span class="keyword">for</span> a3 <span class="keyword">in</span> range(<span class="number">32</span>, <span class="number">128</span>):</span><br><span class="line">                c = chr(a)+<span class="string">&quot;ry&quot;</span>+chr(a1)+<span class="string">&quot;i&quot;</span>+chr(a2)+<span class="string">&quot;_c0&quot;</span>+chr(a3)+<span class="string">&quot;l&quot;</span></span><br><span class="line">                c1 =jiami(c)</span><br><span class="line">                <span class="keyword">if</span> <span class="string">&quot;5ad1c6&quot;</span> <span class="keyword">in</span> c1:</span><br><span class="line">                    <span class="keyword">if</span> <span class="string">&quot;b602c8d&quot;</span> <span class="keyword">in</span> c1:</span><br><span class="line">                        <span class="keyword">if</span> <span class="string">&quot;641999b&quot;</span> <span class="keyword">in</span> c1:</span><br><span class="line">                            print(c,c1)</span><br></pre></td></tr></table></figure>
+<p>最后结果：</p>
+<p><img src="13.png" alt="enter description here"></p>
+<p>所以flag就是：Cry_i5_c00l</p>
+<hr>
+<h3 id="古典密码很有趣"><a href="#古典密码很有趣" class="headerlink" title="古典密码很有趣"></a>古典密码很有趣</h3><p>这个题目很蒙蔽。最后还是逼的用简单替换密码的思路搞出来的。</p>
+<p>先给了一串字符：</p>
+<p>4A52555449354B4D4E4559474F54444A4752324559555A514D354747534E44564A525554415A324D4E4532484B5443544742545559324A554F524746474D44484A5255544135434D4B4D59474F5443544742324559324A554D354747534D44554A524A544150493D</p>
+<p>不知道是啥，先base64一下看看吧。发现不行，16进制转ascii码也不行。最后发现是base64全家桶<br>直接上代码解密：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">a = <span class="string">&quot;4A52555449354B4D4E4559474F54444A4752324559555A514D354747534E44564A525554415A324D4E4532484B5443544742545559324A554F524746474D44484A5255544135434D4B4D59474F5443544742324559324A554D354747534D44554A524A544150493D&quot;</span></span><br><span class="line">b = base64.b64decode(base64.b32decode(base64.b16decode(a)))</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<p>然后可以解密出来一串莫斯密码。<br>结果：….- ..— ….- …– ..— .—- —.. .—-<br>然后我们莫斯解密一下<br>得到了一串数字：42432181</p>
+<p>然后我们发现最大数字是8.最后经过一系列尝试。发现也就9位键盘密码能解密出来个像样的字符</p>
+<h1 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h1><h2 id="re1"><a href="#re1" class="headerlink" title="re1"></a>re1</h2><p>其实就是道标准的RC4，算法上没有怎么进行魔改，只是在puts函数哪里加了到混淆，很多人都会当成C里面的puts函数正常打印出文字，实际上里面：</p>
+<p><img src="14.png" alt="enter description here"></p>
+<p>可以看到在里面执行了sub_400686这个函数一次，结合主函数看，可以知道他在一开始就运行了一次。</p>
+<p>主函数：</p>
+<p><img src="15.png" alt="enter description here"></p>
+<p>基本上可以知道，我们输入的数据也进入了sub_400686这个函数进行了处理，然后v3是我们输入数据的长度。<br>最后将处理完的数组s和这个不知道名字的字符串数组进行了对比，如果一样就正确。</p>
+<p>sub_400686函数：</p>
+<p><img src="16.png" alt="enter description here"></p>
+<p>可以看到这个sub_400686就是个程序的主要加密过程。</p>
+<p>具体学习可以根据：<br><a href="https://ctf-wiki.github.io/ctf-wiki/crypto/streamcipher/special/rc4/">rc4加密原理</a></p>
+<p>然后我们优化下算法让那些”—“符号换成应该的字符</p>
+<p><img src="17.png" alt="enter description here"></p>
+<p>然后根据已知信息大概可以知道程序的基本运行逻辑是什么了。接着就是开始解密就OK</p>
+<p>基本逻辑：运行程序 -&gt; 先加密一次Key(优化完毕以后可以看到data和k都是key) -&gt; 加密输入的数据 -&gt;用加密后的数据s和_进行比较</p>
+<p>程序中的_就是密文，然后key就是密钥。所以直接编写解密脚本就可以了</p>
+<p>具体加密后的key可以使用动态调试就可以看到。</p>
+<p><img src="18.png" alt="enter description here"></p>
+<p>密文就是：</p>
+<p><img src="19.png" alt="enter description here"></p>
+<p>然后就可以写解密脚本了，使用python的话调用pycrypto模块就可以搞定。</p>
+<p>最后脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=&quot;utf-8&quot;</span></span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> *</span><br><span class="line">data = <span class="string">&quot;\x1C\x61\x97\x34\x28\x69\xFA\x54\xDA\x3A\x2B\xBB\x05\x09\x16\x38\xF3\xCF\xD8\xA5\x12\x7E\x67\x44&quot;</span></span><br><span class="line">key = <span class="string">&quot;\xB6\x1E\x56\xB9\xA3\x40\x18\xE6\x92\xC1\x1D\x74&quot;</span></span><br><span class="line">m = ARC4.new(key).decrypt(data)</span><br><span class="line">print(m)</span><br></pre></td></tr></table></figure>
+
+<h2 id="re2"><a href="#re2" class="headerlink" title="re2"></a>re2</h2><p>题目直接就告诉了使用符号执行angr，所以简单的分析下程序</p>
+<p><img src="20.png" alt="enter description here"></p>
+<p>然后就开始</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> angr</span><br><span class="line">p=angr.Project(<span class="string">&#x27;./re2&#x27;</span>,auto_load_libs=<span class="literal">False</span>)</span><br><span class="line">state=p.factory.entry_state()</span><br><span class="line">simgr=p.factory.simgr(state)</span><br><span class="line">simgr.explore(find=<span class="number">0x402F71</span>,avoid=<span class="number">0x402F82</span>)</span><br><span class="line">result=simgr.found[<span class="number">0</span>].posix.dumps(<span class="number">0</span>)</span><br><span class="line"><span class="comment">#print result</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(result),len(result)/<span class="number">4</span>):</span><br><span class="line">        <span class="keyword">print</span> result[i:i+len(result)/<span class="number">4</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>发现有点坑，这个输入的num有4个，所以要做下分片处理，再输入到程序就OK</p>
+<p><img src="21.png" alt="enter description here"></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            G0fl1er
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>一只想学技术的专科菜鸡</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176926/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176908/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964745856182/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/MSSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/filename/">14道杂项中的隐写题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E5%B7%A5%E5%85%B7Angr%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/11/docs/15964746176721/">符号执行工具Angr的简单使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/2019DDCTF%E9%83%A8%E5%88%86wp/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/25/docs/15964746176699/">2019DDCTF部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/mysql%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%85%A5/">mysql手动注入</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/19/2018%E6%B9%96%E6%B9%98%E6%9D%AF%E5%A4%8D%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/">2018湖湘杯复赛部分题解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/06/16/MSSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/15/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/">c语言学习第一天</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/13/%E4%B8%80%E9%81%93picoctf%E7%9A%84RSA%E9%A2%98%E7%9B%AE/">一道picoctf的RSA题目</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/13/%E6%8A%A4%E7%BD%91%E6%9D%AF/">护网杯签到题wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/13/docs/15964746176740/">护网杯签到题wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/08/docs/15964746176890/">CVE-2018-4407复现(ios缓冲区溢出漏洞)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/11/docs/15964746176946/">mysql手动注入</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/docs/15964746176926/">MSSQL学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/10/17/docs/15964746176806/">我校平台CTF解题部分wp</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2018/10/29/docs/15964746176652/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2018/10/29/docs/15964746176652/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2018/10/29/docs/15964746176652/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/ctf/" style="font-size: 18.85989183964383px;" class="tag-cloud-link">ctf</a>
+    
+    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 12.544941086304283px;" class="tag-cloud-link">漏洞复现</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 17.828392514706458px;" class="tag-cloud-link">学习笔记</a>
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="youlian/index.html" target="_blank">大佬友链</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="" target="_blank">Github</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 G0fl1er Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
