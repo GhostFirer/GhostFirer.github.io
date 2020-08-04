@@ -229,8 +229,8 @@
 <p>步骤基本上跟windows差不多</p>
 <h3 id="1-创建一个ssh密钥设置到github里面"><a href="#1-创建一个ssh密钥设置到github里面" class="headerlink" title="1.创建一个ssh密钥设置到github里面"></a>1.创建一个ssh密钥设置到github里面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;.ssh #检查是否存在</span><br><span class="line">ssh-keygen -t rsa -C &quot;email&quot; #创建一个ssh</span><br><span class="line"> ssh -T git@GitHub.com #验证一下是否成功,成功会返回github的名称</span><br></pre></td></tr></table></figure>
 <h3 id="2-安装node"><a href="#2-安装node" class="headerlink" title="2.安装node"></a>2.安装node</h3><p>看到很多人都是brew安装的,我是直接去官网下载的<br><a href="https://nodejs.org/en/">node官网</a></p>
-<h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h3><p>直接npm下载hexo即可:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h3><p>直接npm下载hexo即可:<br><a href="https://hexo.io/">hexo官网</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 <p>接着就是创建一个blog文件夹:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure>
 <p>开始初始化hexo：</p>
@@ -381,7 +381,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/10/29/2018%E7%AC%AC7%E5%B1%8A%E8%93%9D%E7%9B%BE%E6%9D%AF%E9%83%A8%E5%88%86wp/">2018第7届蓝盾杯部分wp</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2018/11/19/2018%E6%B9%96%E6%B9%98%E6%9D%AF%E5%A4%8D%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/">2018湖湘杯复赛部分题解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/08/CVE-2018-4407%E5%A4%8D%E7%8E%B0/">CVE-2018-4407复现(ios缓冲区溢出漏洞)</a>
                 </span>
             </li>
             
@@ -393,25 +405,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/10/31/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%BA%8C%E5%A4%A9/">C语言学习第二天</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/10/15/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/">c语言学习第一天</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/06/16/filename/">14道杂项中的隐写题目</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/03/11/mysql%E6%89%8B%E5%8A%A8%E6%B3%A8%E5%85%A5/">mysql手动注入</a>
                 </span>
             </li>
             
@@ -430,6 +424,12 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/10/19/%E5%AE%9E%E9%AA%8C%E5%90%A7/">实验吧做题笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/08/04/Mac-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Docker/">Mac 安装使用Docker</a>
                 </span>
             </li>
             
@@ -460,11 +460,11 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/ctf/" style="font-size: 12.63650574054018px;" class="tag-cloud-link">ctf</a>
+    <a href="/tags/ctf/" style="font-size: 13.357006997748204px;" class="tag-cloud-link">ctf</a>
     
-    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 12.1794414778856px;" class="tag-cloud-link">漏洞复现</a>
+    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" style="font-size: 18.77275031453465px;" class="tag-cloud-link">漏洞复现</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 11.436619921942917px;" class="tag-cloud-link">学习笔记</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 11.152590987349903px;" class="tag-cloud-link">学习笔记</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
